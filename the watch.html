@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arysance - Explore our exquisite watch collection">
+    <title>Watch Collection | Arysance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Monotype+Corsiva|Playfair+Display:400,700|Dream+Avenue|Garamond&display=swap">
+    <link rel="stylesheet" href="wp-content/themes/Arysance/style.css" type="text/css"/>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            background-image: url('IMG_1579(1)(1).png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            display: block;
+            height: 50px;
+        }
+
+        .header .logo img {
+            height: 100%;
+        }
+
+        .header .menu {
+            display: flex;
+        }
+
+        .header .menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 0 15px;
+            line-height: 50px;
+        }
+
+        .header .menu a:hover {
+            background-color: #f7f7f7;
+        }
+
+        .watch-section {
+            padding: 20px;
+            background-color: rgba(249, 249, 249, 0.9);
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .watch-section .watch-item {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .watch-section .watch-item img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .watch-section .watch-item h3 {
+            font-family: 'Playfair Display', serif;
+            color: #333;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .watch-section .watch-item p {
+            color: #666;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .watch-section .watch-item .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .watch-section .watch-item .classic-font {
+            font-family: 'Garamond', serif;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .watch-section .watch-item .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #556B8E;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .watch-section .watch-item .button:hover {
+            background-color: #43506D;
+        }
+
+        .animated-text {
+            font-family: 'Dream Avenue', cursive;
+            font-size: 2em;
+            color: #556B8E;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: relative;
+            animation: slide 10s linear infinite;
+            padding: 20px 0;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <a href="vs.html" class="logo">
+        <img src="Main arysance.jpg" alt="Arysance">
+    </a>
+    <nav class="menu">
+        <a href="index.html#featured-properties">Featured Properties</a>
+        <a href="watch.html">The Watch</a>
+        <a href="vs.html#contact-us">Enquiries</a>
+    </nav>
+</header>
+
+<section class="watch-section">
+    <div class="watch-item">
+        <img src="silver 2.jpg" alt="Watch 1" id="watch1">
+        <h3>GRATITUDE WATCH</h3>
+        <p>This classic watch features a timeless design with a polished steel case and sleek chain strap. Perfect for any occasion, it combines elegance with functionality.</p>
+        <div class="price">₹1821</div>
+        <p class="classic-font">MRP (Inclusive of all taxes) Shipping calculated at checkout.</p>
+        <a href="buy.html" class="button">Buy Now</a>
+        
+        <!-- Animated Text -->
+        <div class="animated-text">ARYSANCE</div>
+    </div>
+    
+    <div class="watch-item">
+        <img src="green download 9.jpg" alt="Watch 2" id="watch2">
+        <h3>GOLDEN SPRUCE</h3>
+        <p>Embrace modern luxury with this sleek watch featuring a golden ring and a high-tech quartz movement. Its contemporary design is both stylish and practical.</p>
+        <div class="price">₹1704</div>
+        <p class="classic-font">MRP (Inclusive of all taxes) Shipping calculated at checkout.</p>
+        <a href="buy.html" class="button">Buy Now</a>
+    </div>
+</section>
+
+<script>
+    function setupImageClick(imageId, images) {
+        const img = document.getElementById(imageId);
+        let currentIndex = 0;
+
+        img.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            img.src = images[currentIndex];
+        });
+    }
+
+    setupImageClick('watch1', [
+        'silver 2.jpg',     // Original image
+        'IMG_1491 (1).jpg', // Click 1
+        'silver3.jpg',      // Click 2
+        'lock.jpg'          // Click 3 (New image)
+    ]);
+
+    setupImageClick('watch2', [
+        'green download 9.jpg', // Original image
+        'green download 8.jpg', // Click 1
+        'green last.jpg',       // Click 2
+        'lock.jpg'              // Click 3 (New image)
+    ]);
+</script>
+
+</body>
+</html>

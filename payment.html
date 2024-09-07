@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Payment - Arysance">
+    <title>Payment | Arysance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans|Playfair+Display&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            background-image: url('Main arysance.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .payment-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .payment-container h1 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: #333; /* Dark text color for readability */
+        }
+
+        .payment-options {
+            margin: 20px 0;
+        }
+
+        .payment-options button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #556B8E;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .payment-options button:hover {
+            background-color: #43506D;
+        }
+
+        .payment-details {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .payment-details input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Josefin Sans', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .payment-details button {
+            width: 100%;
+            padding: 10px;
+            background-color: #556B8E;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .payment-details button:hover {
+            background-color: #43506D;
+        }
+    </style>
+</head>
+<body>
+
+<div class="payment-container">
+    <h1>Select Payment Method</h1>
+    <div class="payment-options">
+        <button id="pay-upi" onclick="showPaymentDetails('UPI')">Pay via UPI (Paytm, PhonePe)</button>
+        <button id="pay-paytm" onclick="showPaymentDetails('Paytm')">Pay via Paytm</button>
+        <button id="pay-phonepe" onclick="showPaymentDetails('PhonePe')">Pay via PhonePe</button>
+    </div>
+
+    <div class="payment-details" id="payment-details">
+        <label for="payment-id">Enter Payment Details:</label>
+        <input type="text" id="payment-id" placeholder="Enter your UPI ID or Payment ID">
+        <button onclick="completePayment()">Submit Payment</button>
+    </div>
+</div>
+
+<script>
+function showPaymentDetails(method) {
+    // Display payment details section
+    document.getElementById('payment-details').style.display = 'block';
+    document.getElementById('payment-id').placeholder = `Enter your ${method} ID or Payment ID`;
+    
+    // Store the selected method in localStorage
+    localStorage.setItem('paymentMethod', method);
+}
+
+function completePayment() {
+    // Get payment method from localStorage
+    const method = localStorage.getItem('paymentMethod');
+    const paymentId = document.getElementById('payment-id').value;
+
+    if (!paymentId) {
+        alert('Please enter your payment details.');
+        return;
+    }
+
+    // Simulate the payment process
+    alert(`Payment via ${method} initiated to 7827735779@ptyes. Payment ID: ${paymentId}\n\nPlease confirm the payment in your payment app.`);
+
+    // Simulate waiting for user confirmation
+    setTimeout(function() {
+        // Show congratulations message
+        alert('Congratulations! Your payment was successful.');
+
+        // Send the checkout information to email (requires server-side script)
+        sendCheckoutInfo();
+
+        // Redirect to vs.html after 10 seconds
+        setTimeout(function() {
+            window.location.href = "vs.html";
+        }, 10000); // 10 seconds delay
+    }, 5000); // Simulate a 5-second delay for user confirmation
+}
+
+function sendCheckoutInfo() {
+    // Assuming checkout information is on a separate page named buy.html
+    fetch('buy.html')
+        .then(response => response.text())
+        .then(html => {
+            const emailBody = encodeURIComponent(html);
+            const emailSubject = encodeURIComponent('Checkout Information');
+            const emailTo = 'arysance@gmail.com';
+            
+            // Create a mailto link to send the email (client-side simulation)
+            window.location.href = `mailto:${emailTo}?subject=${emailSubject}&body=${emailBody}`;
+        });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+/* General Styles */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #333;
+    font-weight: bold;
+}
+
+.splash {
+    background: url('wp-content/themes/Arysance/assets/img/gold-hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.splash .logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.splash span {
+    font-size: 2em;
+}
+
+.section {
+    padding: 60px 20px;
+}
+
+.cream {
+    background: #f5f5f5;
+}
+
+.white {
+    background: #fff;
+}
+
+.text h2, .text h3 {
+    margin-top: 0;
+}
+
+.text a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.text a.button:hover {
+    background: #333;
+}
+
+.contact address {
+    margin-bottom: 20px;
+}
+
+.contact a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer {
+    padding: 20px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Burger Menu */
+.burgercontainer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.burgercontainer .main-burger {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.burgercontainer .top,
+.burgercontainer .mid,
+.burgercontainer .bot {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 4px 0;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+}
