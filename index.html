@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Arysance Watches - Craftsmanship Redefined">
@@ -391,11 +392,40 @@
             </ul>
             <a class="button" title="Learn more about our watches" href="the watch.html">Learn More About Our Watch</a>
         </div>
+        <style>
+            .image {
+                display: flex;
+                flex-wrap: wrap; /* Ensure the images wrap if there’s not enough space */
+                justify-content: space-around; /* Space between the images */
+                gap: 10px; /* Add some space between the images */
+            }
+        
+            .image a img {
+                width: 60%; /* Increase image size to 60% of its original size */
+                height: auto; /* Maintain aspect ratio */
+                max-width: 100%; /* Ensure the images don't overflow */
+            }
+        
+            /* Media Query for mobile devices */
+            @media (max-width: 768px) {
+                .image a img {
+                    width: 80%; /* Further increase size on smaller screens */
+                }
+            }
+        
+            @media (max-width: 480px) {
+                .image a img {
+                    width: 100%; /* Full width on very small screens */
+                }
+            }
+        </style>
+        
         <div class="image">
             <a href="the watch.html#IMG_1429"><img src="green best.jpg" alt="Arysance Watch"></a>
             <a href="the watch.html#IMG_1429"><img src="green third.jpg" alt="Arysance Watch"></a>
-            <a href="the watch.html#IMG_1429"><img src="IMG_1579.jpg".jpg" alt="Arysance Watch"></a>
+            <a href="the watch.html#IMG_1429"><img src="IMG_1579.jpg" alt="Arysance Watch"></a>
         </div>
+        
         <div class="video">
             <video src="green red.mp4" autoplay loop muted></video>
         </div>
@@ -443,27 +473,72 @@
         background-size: cover;
         padding: 20px;
         border-radius: 10px;
-        color: #fff; /* Ensures readability against the background */
+        color: #fff;
+        max-width: 100%; /* Ensures it adapts to the screen width */
+        width: 90%; /* Take 90% of the screen width */
+        height: auto; /* Ensure it adapts to the content */
+        max-height: 90vh; /* Prevent modal from exceeding 90% of the viewport height */
+        margin: 0 auto; /* Center horizontally */
+        overflow-y: auto; /* Allow scrolling if content overflows */
     }
 
     h2 {
         font-family: 'Dream Avenue', sans-serif;
+        font-size: 1.5em;
     }
 
     label, input {
-        color: #fff; /* Makes form elements visible */
+        color: #fff;
     }
 
     .modal-content input[type="submit"] {
-        background-color: #fff; /* White background for button */
-        color: #000; /* Black text for button */
+        background-color: #fff;
+        color: #000;
         border: none;
         padding: 10px 20px;
         cursor: pointer;
+        font-size: 1em;
     }
 
     .modal-content input[type="submit"]:hover {
-        background-color: #ddd; /* Slight change on hover */
+        background-color: #ddd;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+        .modal-content {
+            padding: 15px;
+            border-radius: 8px;
+            width: 95%; /* Wider for smaller screens */
+            max-width: 95%;
+        }
+
+        h2 {
+            font-size: 1.2em;
+        }
+
+        .modal-content input[type="submit"] {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .modal-content {
+            padding: 10px;
+            border-radius: 6px;
+            width: 100%; /* Full width on very small screens */
+            max-width: 100%;
+        }
+
+        h2 {
+            font-size: 1em;
+        }
+
+        .modal-content input[type="submit"] {
+            padding: 6px 12px;
+            font-size: 0.8em;
+        }
     }
 </style>
 
