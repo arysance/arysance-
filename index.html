@@ -488,7 +488,7 @@
         padding: 20px;
         border-radius: 10px;
         color: #fff;
-        width: 80%; /* Take 80% of the screen width */
+        width: 90%; /* Take 90% of the screen width */
         max-width: 400px; /* Ensure a maximum width */
         height: auto; /* Adapt to content */
         max-height: 90vh; /* Prevent modal from exceeding 90% of the viewport height */
@@ -550,8 +550,8 @@
     /* Media Queries for Responsiveness */
     @media (max-width: 768px) {
         .modal-content {
-            width: 90%; /* Wider for smaller screens */
-            max-width: 90%;
+            width: 95%; /* Wider for smaller screens */
+            max-width: 95%;
             padding: 15px;
         }
 
@@ -567,9 +567,12 @@
 
     @media (max-width: 480px) {
         .modal-content {
-            width: 95%; /* Full width on very small screens */
-            max-width: 95%;
+            width: 100%; /* Full width on very small screens */
+            max-width: 100%;
             padding: 10px;
+            border-radius: 0; /* Remove border radius for full-width */
+            margin: 0; /* Centering is handled by width */
+            height: auto; /* Allow height to adapt */
         }
 
         .modal-content h2 {
@@ -619,6 +622,7 @@
         }
     }
 </script>
+
 
 
 <script>
