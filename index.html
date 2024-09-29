@@ -421,10 +421,21 @@
         </style>
         
         <div class="image">
-            <a href="the watch.html#IMG_1429"><img src="green best.jpg" alt="Arysance Watch"></a>
-            <a href="the watch.html#IMG_1429"><img src="green third.jpg" alt="Arysance Watch"></a>
-            <a href="the watch.html#IMG_1429"><img src="IMG_1579.jpg" alt="Arysance Watch"></a>
+            <a href="the watch.html#IMG_1429">
+                <img src="green best.jpg" alt="Arysance Watch" class="three-d-image">
+            </a>
+            <a href="the watch.html#IMG_1429">
+                <video controls class="three-d-image" alt="ARYSANCE - GREYTITUDE WATCH video">
+                    <source src="ARYSANCE - GREYTITUDE WATCH video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </a>
+            <a href="the watch.html#IMG_1429">
+                <img src="IMG_1579.jpg" alt="Arysance Watch" class="three-d-image">
+            </a>
         </div>
+        
+        
         
         <div class="video">
             <video src="green red.mp4" autoplay loop muted></video>
@@ -488,8 +499,8 @@
         padding: 20px;
         border-radius: 10px;
         color: #fff;
-        width: 90%; /* Take 90% of the screen width */
-        max-width: 400px; /* Ensure a maximum width */
+        width: 80%; /* Take 80% of the screen width */
+        max-width: 400px; /* Ensure a maximum width for desktop */
         height: auto; /* Adapt to content */
         max-height: 90vh; /* Prevent modal from exceeding 90% of the viewport height */
         margin: 10% auto; /* Center horizontally and give top margin */
@@ -550,8 +561,8 @@
     /* Media Queries for Responsiveness */
     @media (max-width: 768px) {
         .modal-content {
-            width: 95%; /* Wider for smaller screens */
-            max-width: 95%;
+            width: 90%; /* Wider for smaller screens */
+            max-width: 90%;
             padding: 15px;
         }
 
@@ -567,11 +578,11 @@
 
     @media (max-width: 480px) {
         .modal-content {
-            width: 100%; /* Full width on very small screens */
-            max-width: 100%;
+            width: 95%; /* Full width on very small screens */
+            max-width: 95%;
             padding: 10px;
             border-radius: 0; /* Remove border radius for full-width */
-            margin: 0; /* Centering is handled by width */
+            margin: 5% auto; /* Centering with reduced top margin */
             height: auto; /* Allow height to adapt */
         }
 
@@ -623,8 +634,6 @@
     }
 </script>
 
-
-
 <script>
      // JavaScript for handling the menu toggle
      document.addEventListener('DOMContentLoaded', function() {
@@ -662,6 +671,7 @@
         }
     });
 </script>
+
 
 </body>
 </html>

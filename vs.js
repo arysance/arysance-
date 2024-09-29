@@ -23,3 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+const burger = document.querySelector('.burgercontainer');
+const menuContent = document.querySelector('.menu-content');
+
+burger.addEventListener('click', () => {
+    menuContent.classList.toggle('active');
+});
