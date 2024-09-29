@@ -15,10 +15,16 @@ header {
     padding: 20px;
     border-bottom: 1px solid #ddd;
     position: relative;
+    display: flex;
+    justify-content: center; /* Center the logo */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack items vertically */
 }
 
 .logo img {
-    max-width: 150px;
+    max-width: 80%; /* Make the logo responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100px; /* Set maximum height to ensure it doesn't exceed */
 }
 
 nav {
@@ -153,14 +159,11 @@ nav ul li a {
     }
 }
 
-
-@media screen and (max-width: 600px)
-{
-    h1{
+@media screen and (max-width: 600px) {
+    h1 {
         font-size: 36px;
         line-height: 50px;
     }
-
 }
 
 .image {
@@ -188,22 +191,26 @@ nav ul li a {
     .top-bar {
         flex-direction: column; /* Stack the items vertically */
     }
+
     .tagline {
         font-size: 16px; /* Smaller tagline font for mobile */
     }
+
     .main-burger {
         display: flex; /* Show burger icon on mobile */
     }
+
     .menu-content {
         display: none; /* Hide menu initially */
     }
+
     .menu-content.active {
         display: block; /* Show menu when active */
     }
 }
 
-
-.splash img, .splash video {
+.splash img,
+.splash video {
     width: 100%; /* Full width */
     height: auto; /* Maintain aspect ratio */
     max-height: 100vh; /* Don't exceed viewport height */
@@ -215,6 +222,7 @@ nav ul li a {
         flex-direction: column; /* Stack content vertically */
     }
 }
+
 .image {
     display: flex;
     flex-wrap: wrap; /* Ensure images wrap */
@@ -222,7 +230,8 @@ nav ul li a {
     gap: 10px; /* Add spacing */
 }
 
-.image a img, .image a video {
+.image a img,
+.image a video {
     width: 60%; /* Increase image size to 60% */
     max-width: 100%;
     height: auto; /* Maintain aspect ratio */
@@ -230,14 +239,16 @@ nav ul li a {
 
 /* Mobile screens */
 @media (max-width: 768px) {
-    .image a img, .image a video {
+    .image a img,
+    .image a video {
         width: 80%; /* Increase size further for smaller screens */
     }
 }
 
 /* Very small screens */
 @media (max-width: 480px) {
-    .image a img, .image a video {
+    .image a img,
+    .image a video {
         width: 100%; /* Full width on very small screens */
     }
 }
@@ -290,3 +301,29 @@ nav ul li a {
     }
 }
 
+.image {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 20px; /* Add padding around */
+}
+
+.three-d-image {
+    width: 100%; /* Full width to ensure it fits in the screen */
+    max-width: 300px; /* Set maximum width to match green best.jpg */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Ensure the green best image and video are the same size */
+.main-image {
+    max-width: 300px; /* Set a maximum width for the main image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .three-d-image {
+        width: 90%; /* Ensure it doesn't exceed the screen width */
+        max-width: none; /* Remove max-width to fit smaller screens */
+    }
+}
