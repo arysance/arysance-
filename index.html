@@ -366,9 +366,10 @@
 
 <header>
     <a href="the watch.html" title="Arysance" rel="home" class="logo">
-        <img src="Main arysance.jpg" alt="Arysance">
+        <img src="Main arysance.jpg" alt="Arysance" class="logo-image">
     </a>
 </header>
+
 
 
 <section class="splash animate wideImg">
@@ -438,6 +439,7 @@
         
         
         
+        
         <div class="video">
             <video src="green red.mp4" autoplay loop muted></video>
         </div>
@@ -502,9 +504,10 @@
         color: #fff;
         width: 80%; /* Take 80% of the screen width */
         max-width: 400px; /* Ensure a maximum width for desktop */
-        height: 50vh; /* Set height to half the viewport height */
-        margin: 25vh auto; /* Center vertically and horizontally */
-        overflow-y: hidden; /* Prevent scrolling inside the modal */
+        height: auto; /* Set height to auto to adjust to content */
+        max-height: calc(100vh - 60px); /* Adjusted height based on top bar */
+        margin: 10% auto; /* Center vertically and horizontally */
+        overflow-y: auto; /* Allow scrolling if content exceeds max height */
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow for a better look */
     }
 
@@ -580,8 +583,8 @@
             width: 95%; /* Full width on very small screens */
             padding: 10px;
             border-radius: 0; /* Remove border radius for full-width */
-            height: 50vh; /* Maintain half-screen height */
-            margin: 25vh auto; /* Center vertically */
+            max-height: calc(100vh - 60px); /* Maintain height relative to top bar */
+            margin: 10% auto; /* Center vertically */
         }
 
         .modal-content h2 {
@@ -669,6 +672,7 @@
         }
     });
 </script>
+
 
 
 </body>
