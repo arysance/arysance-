@@ -1,364 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="description" content="Arysance Watches - Craftsmanship Redefined">
-    <meta name="keywords" content="luxury watches, handcrafted watches, Arysance watches, men's luxury watches, women's luxury watches, high-end watches, limited edition watches, luxury timepieces, premium watches, exclusive watches, designer watches, luxury watches in India, handcrafted watches in India, luxury watch brands India, luxury watches online, Swiss movement watches, luxury dress watches, custom watches, bespoke watches, limited edition timepieces, high-end timepieces, luxury gifts, watches for collectors, premium handcrafted watches, high-end watches India, elegant watches, luxury fashion accessories, best luxury watches, artisan watches, luxury chronographs, luxury watches for him, luxury watches for her, luxury watch shopping, luxury watch collection, luxury wristwatches, best luxury watches 2024, handcrafted Swiss watches, exclusive timepieces, fine watches, Arysance luxury watches India, limited edition luxury watches, watches for gentlemen, luxury brand watches, automatic luxury watches, affordable luxury watches, luxury quartz watches, watch brand India, best watch for men, luxury lifestyle accessories, luxury watch store, luxury sports watches, iconic watches, elegant watches for men, exclusive luxury timepieces, luxury watches for women, handcrafted watch collections">
-    <title>The Watch | Arysance</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Dancing+Script:700|Montez|Edwardian+Script+ITC|Monotype+Corsiva|Opera|Playfair+Display:400,700|Cinzel:400,700&display=swap">
-    <link rel="stylesheet" href="wp-content/themes/Arysance/style.css" type="text/css"/>
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
-    
-    <style>
-        /* Basic styles */
-        body {
-            margin: 0;
-            font-family: 'Josefin Sans', sans-serif;
-        }
-    
-        /* Styling the top bar with menu and the tagline */
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1000;
-        }
-    
-        .burgercontainer {
-            cursor: pointer;
-            position: relative;
-        }
-    
-        .main-burger {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 30px;
-        }
-    
-        .main-burger span {
-            display: block;
-            width: 30px;
-            height: 3px;
-            background-color: #333;
-            margin: 5px 0;
-            transition: all 0.3s;
-        }
-    
-        .menu-content {
-            display: none; /* Hide menu by default */
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-    
-        .menu-content ul {
-            list-style: none;
-            margin: 0;
-            padding: 10px 0;
-        }
-    
-        .menu-content ul li {
-            padding: 10px 20px;
-            border-bottom: 1px solid #ddd;
-        }
-    
-        .menu-content ul li a {
-            text-decoration: none;
-            color: #333;
-        }
-    
-        .menu-content ul li:hover {
-            background-color: #f7f7f7;
-        }
-    
-        /* Styling the tagline */
-        .tagline {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            color: #333;
-            text-align: center;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-    
-        /* Adjustments for splash section to remove gaps */
-        .splash {
-            position: relative;
-            margin: 0;
-            padding: 0;
-        }
-    
-        .splash .wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .splash .logo {
-            display: block;
-            width: 100%;
-            max-height: 100vh;
-            object-fit: cover;
-            margin: 0;
-            padding: 0;
-        }
-    
-        .splash img {
-            display: block;
-            width: 100%;
-            max-height: 100vh;
-            object-fit: cover;
-            margin: 0;
-            padding: 0;
-        }
-    
-        /* Contact Us Section */
-        .contact-section {
-            font-family: 'Garamond', serif;
-            background-color: #556B8E;
-            padding: 20px;
-            text-align: right;
-            color: #EAE0D5;
-            font-size: 13.5pt;
-            margin-top: 50px;
-        }
-    
-        .contact-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #EAE0D5;
-        }
-    
-        .contact-section p {
-            margin: 5px 0;
-            color: #EAE0D5;
-        }
-    
-        .contact-section a {
-            color: #EAE0D5;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    
-        .contact-section a:hover {
-            text-decoration: underline;
-        }
-    
-        .contact-section .social-icons {
-            margin-top: 10px;
-            text-align: right;
-        }
-    
-        .contact-section .social-icons img {
-            width: 30px;
-            height: 30px;
-            margin: 0 5px;
-            cursor: pointer;
-            vertical-align: middle;
-        }
-    
-        /* Styles for the "Our Watch" section */
-        .cream.first.left.wide.animate {
-            position: relative;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-    
-        .cream .text {
-            flex: 1;
-            max-width: 50%;
-            color: #a9a9a9;
-            font-family: 'Monotype Corsiva', cursive;
-            text-align: center;
-        }
-    
-        .cream .text h3 a {
-            color: #b2beb5;
-            font-family: 'Edwardian Script ITC', cursive;
-        }
-    
-        .cream .image {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            width: 70%;
-            max-width: 70%;
-        }
-    
-        .cream .image img {
-            width: 50%;
-            height: auto;
-            object-fit: cover;
-        }
-    
-        .cream .video {
-            width: 98%;
-            max-width: 98%;
-        }
-    
-        .cream .video video {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-    
-        /* Button styling */
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-    
-        .button:hover {
-            background-color: #555;
-        }
-    
-        /* Animation for the "GOLDEN SPRUCE" text */
-        @keyframes moveRight {
-            0% {
-                transform: translateX(-100%);
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="description" content="Arysance Watches - Craftsmanship Redefined">
+        <meta name="keywords" content="luxury watches, handcrafted watches, Arysance watches, men's luxury watches, women's luxury watches, high-end watches, limited edition watches, luxury timepieces, premium watches, exclusive watches, designer watches, luxury watches in India, handcrafted watches in India, luxury watch brands India, luxury watches online, Swiss movement watches, luxury dress watches, custom watches, bespoke watches, limited edition timepieces, high-end timepieces, luxury gifts, watches for collectors, premium handcrafted watches, high-end watches India, elegant watches, luxury fashion accessories, best luxury watches, artisan watches, luxury chronographs, luxury watches for him, luxury watches for her, luxury watch shopping, luxury watch collection, luxury wristwatches, best luxury watches 2024, handcrafted Swiss watches, exclusive timepieces, fine watches, Arysance luxury watches India, limited edition luxury watches, watches for gentlemen, luxury brand watches, automatic luxury watches, affordable luxury watches, luxury quartz watches, watch brand India, best watch for men, luxury lifestyle accessories, luxury watch store, luxury sports watches, iconic watches, elegant watches for men, exclusive luxury timepieces, luxury watches for women, handcrafted watch collections">
+        <title>The Watch | Arysance</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Dancing+Script:700|Montez|Edwardian+Script+ITC|Monotype+Corsiva|Opera|Playfair+Display:400,700|Cinzel:400,700&display=swap">
+        <link rel="stylesheet" href="wp-content/themes/Arysance/style.css" type="text/css"/>
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+        
+        <style>
+            /* Basic styles */
+            body {
+                margin: 0;
+                font-family: 'Josefin Sans', sans-serif;
+                line-height: 1.5; /* Improved readability */
             }
-            100% {
-                transform: translateX(100%);
+    
+            /* Styling the top bar with menu and the tagline */
+            .top-bar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                background-color: #fff;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                position: relative;
+                z-index: 1000;
             }
-        }
     
-        .animated-text {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: #b2beb5;
-            white-space: nowrap;
-            overflow: hidden;
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            animation: moveRight 10s linear infinite;
-        }
+            .burgercontainer {
+                cursor: pointer;
+                position: relative;
+            }
     
-        /* Styling the section to apply requested font and colors */
-        .white.second.right.narrow.animate .text h2,
-        .white.second.right.narrow.animate .text h3 a {
-            color: #b2beb5;
-            font-family: 'Edwardian Script ITC', cursive;
-        }
+            .main-burger {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 30px;
+            }
     
-        .white.second.right.narrow.animate .text p,
-        .white.second.right.narrow.animate .text i {
-            color: #a9a9a9;
-            font-family: 'Monotype Corsiva', cursive;
-        }
+            .main-burger span {
+                display: block;
+                width: 30px;
+                height: 3px;
+                background-color: #333;
+                margin: 5px 0;
+                transition: all 0.3s;
+            }
     
-        /* Modal styles */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1000; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
+            .menu-content {
+                display: none; /* Hide menu by default */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #fff;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
     
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-        }
+            .menu-content ul {
+                list-style: none;
+                margin: 0;
+                padding: 10px 0;
+            }
     
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+            .menu-content ul li {
+                padding: 10px 20px;
+                border-bottom: 1px solid #ddd;
+            }
     
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
+            .menu-content ul li a {
+                text-decoration: none;
+                color: #333;
+            }
     
-        /* Style the form inside the modal */
-        #subscription-form {
-            display: flex;
-            flex-direction: column;
-        }
+            .menu-content ul li:hover {
+                background-color: #f7f7f7;
+            }
     
-        #subscription-form label {
-            margin: 10px 0 5px;
-        }
+            /* Styling the tagline */
+            .tagline {
+                font-family: 'Playfair Display', serif;
+                font-size: 18px;
+                color: #333;
+                text-align: center;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
     
-        #subscription-form input[type="email"],
-        #subscription-form input[type="password"] {
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
+            /* Adjustments for splash section */
+            .splash {
+                position: relative;
+                margin: 0;
+                padding: 0;
+            }
     
-        #subscription-form input[type="submit"] {
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    
-        #subscription-form input[type="submit"]:hover {
-            background-color: #555;
-        }
-    
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .contact-section {
-                text-align: center; /* Center content on smaller screens */
+            .splash .wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
     
             .splash img {
+                display: block;
+                width: 100%;
                 max-height: 80vh; /* Reduce image size on mobile */
+                object-fit: cover;
+                margin: 0;
+                padding: 0;
+            }
+    
+            /* Contact Us Section */
+            .contact-section {
+                font-family: 'Garamond', serif;
+                background-color: #556B8E;
+                padding: 20px;
+                text-align: center; /* Center content on mobile */
+                color: #EAE0D5;
+                font-size: 14pt; /* Adjust font size for better readability */
+                margin-top: 50px;
+            }
+    
+            .contact-section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+                color: #EAE0D5;
+            }
+    
+            .contact-section p {
+                margin: 5px 0;
+                color: #EAE0D5;
+            }
+    
+            .contact-section a {
+                color: #EAE0D5;
+                text-decoration: none;
+                font-weight: bold;
+            }
+    
+            .contact-section a:hover {
+                text-decoration: underline;
+            }
+    
+            .contact-section .social-icons {
+                margin-top: 10px;
+            }
+    
+            .contact-section .social-icons img {
+                width: 30px;
+                height: 30px;
+                margin: 0 5px;
+                cursor: pointer;
+                vertical-align: middle;
+            }
+    
+            /* Styles for the "Our Watch" section */
+            .cream.first.left.wide.animate {
+                position: relative;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 20px;
+                flex-wrap: wrap;
             }
     
             .cream .text {
-                max-width: 100%; /* Allow text to take full width */
+                flex: 1;
+                max-width: 100%; /* Allow text to take full width on mobile */
+                color: #a9a9a9;
+                font-family: 'Monotype Corsiva', cursive;
+                text-align: center;
+            }
+    
+            .cream .text h3 a {
+                color: #b2beb5;
+                font-family: 'Edwardian Script ITC', cursive;
+            }
+    
+            .cream .image {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                width: 100%; /* Allow images to take full width */
+                justify-content: center; /* Center images */
             }
     
             .cream .image img {
                 width: 100%; /* Images stack on mobile */
+                max-width: 300px; /* Set a max width for images */
+                height: auto;
+                object-fit: cover;
             }
-        }
-    </style>
     
-</head>
+            .cream .video {
+                width: 98%;
+                max-width: 98%;
+            }
+    
+            .cream .video video {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+    
+            /* Button styling */
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 16px;
+                color: #fff;
+                background-color: #333;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+    
+            .button:hover {
+                background-color: #555;
+            }
+    
+            /* Animation for the "GOLDEN SPRUCE" text */
+            @keyframes moveRight {
+                0% {
+                    transform: translateX(-100%);
+                }
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+    
+            .animated-text {
+                font-family: 'Cinzel', serif;
+                font-size: 2rem;
+                color: #b2beb5;
+                white-space: nowrap;
+                overflow: hidden;
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                animation: moveRight 10s linear infinite;
+            }
+    
+            /* Styling the section to apply requested font and colors */
+            .white.second.right.narrow.animate .text h2,
+            .white.second.right.narrow.animate .text h3 a {
+                color: #b2beb5;
+                font-family: 'Edwardian Script ITC', cursive;
+            }
+    
+            .white.second.right.narrow.animate .text p,
+            .white.second.right.narrow.animate .text i {
+                color: #a9a9a9;
+                font-family: 'Monotype Corsiva', cursive;
+            }
+    
+            /* Modal styles */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1000; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+            }
+    
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto; /* 15% from the top and centered */
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%; /* Could be more or less, depending on screen size */
+                max-width: 500px; /* Limit max width */
+            }
+    
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+    
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    
+            /* Responsive styles */
+            @media (max-width: 768px) {
+                .tagline {
+                    font-size: 14px; /* Smaller font size for mobile */
+                }
+    
+                .contact-section h2 {
+                    font-size: 1.2rem; /* Adjust heading size */
+                }
+    
+                .animated-text {
+                    font-size: 1.5rem; /* Smaller animated text */
+                }
+            }
+    
+            @media (max-width: 480px) {
+                .top-bar {
+                    flex-direction: column; /* Stack elements on small screens */
+                }
+    
+                .burgercontainer {
+                    margin: 10px 0; /* Add margin for spacing */
+                }
+    
+                .splash img {
+                    max-height: 60vh; /* Smaller max height for mobile */
+                }
+    
+                .cream .text h3 {
+                    font-size: 1.2rem; /* Adjust font size for watch section */
+                }
+            }
+        </style>
+    </head>
 <body>
 
 <div class="top-bar">
