@@ -1,32 +1,26 @@
-// Burger Menu Toggle
+// Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', function() {
+    // Burger Menu Toggle
     const burger = document.querySelector('.main-burger');
-    const nav = document.querySelector('nav');
+    const menuContent = document.querySelector('.menu-content');
 
+    // Toggle menu visibility on burger click
     burger.addEventListener('click', function() {
-        nav.classList.toggle('active');
+        menuContent.classList.toggle('active');
     });
-});
 
-// Form Validation (Basic)
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contactform');
-    
+    // Form Validation (Basic)
+    const form = document.getElementById('subscription-form'); // Update to match your form ID
+
+    // Validate form fields on submit
     form.addEventListener('submit', function(event) {
-        const name = form.querySelector('input[name="cf-name"]').value.trim();
-        const email = form.querySelector('input[name="cf-email"]').value.trim();
-        const message = form.querySelector('textarea[name="cf-message"]').value.trim();
+        const email = form.querySelector('input[name="email"]').value.trim();
+        const password = form.querySelector('input[name="password"]').value.trim();
 
-        if (!name || !email || !message) {
+        // Check if fields are empty
+        if (!email || !password) {
             event.preventDefault();
             alert('Please fill in all fields.');
         }
     });
-});
-
-const burger = document.querySelector('.burgercontainer');
-const menuContent = document.querySelector('.menu-content');
-
-burger.addEventListener('click', () => {
-    menuContent.classList.toggle('active');
 });
