@@ -15,29 +15,10 @@ header {
     padding: 20px;
     border-bottom: 1px solid #ddd;
     position: relative;
-    display: flex;
-    justify-content: center; /* Center the logo */
-    align-items: center; /* Center vertically */
-    flex-direction: column; /* Stack items vertically */
 }
 
-.logo-image {
-    max-height: calc(10vh); /* Adjust this value based on your top bar height */
-    width: auto; /* Maintain aspect ratio */
-}
-
-/* Optional: Center the logo in the top bar */
-.top-bar .logo {
-    flex: 1; /* Allow the logo to take available space */
-    display: flex;
-    justify-content: center; /* Center the logo */
-}
-
-/* Ensuring top bar styles apply correctly on mobile */
-@media (max-width: 768px) {
-    .logo-image {
-        max-height: calc(10vh); /* Ensure the logo does not exceed the height of the top bar */
-    }
+.logo img {
+    max-width: 150px;
 }
 
 nav {
@@ -160,43 +141,26 @@ nav ul li a {
     padding: 0 20px;
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Stack the navigation items vertically */
-        display: none; /* Hide menu initially */
+        flex-direction: column;
+        display: none;
     }
 
     nav.active ul {
-        display: flex; /* Show menu when active */
-    }
-
-    .top-bar {
-        flex-direction: column; /* Stack the items vertically */
-    }
-
-    .tagline {
-        font-size: 16px; /* Smaller tagline font for mobile */
-    }
-
-    .main-burger {
-        display: flex; /* Show burger icon on mobile */
-    }
-
-    .menu-content {
-        display: none; /* Hide menu initially */
-    }
-
-    .menu-content.active {
-        display: block; /* Show menu when active */
+        display: flex;
     }
 }
 
-@media screen and (max-width: 600px) {
-    h1 {
+
+@media screen and (max-width: 600px)
+{
+    h1{
         font-size: 36px;
         line-height: 50px;
     }
+
 }
 
 .image {
@@ -221,19 +185,108 @@ nav ul li a {
 
 /* For mobile screens */
 @media (max-width: 768px) {
-    .three-d-image {
-        max-height: calc(10vh); /* Ensure that images/videos do not exceed the top bar height */
+    .top-bar {
+        flex-direction: column; /* Stack the items vertically */
     }
-
-    .splash img,
-    .splash video {
-        width: 100%; /* Full width */
-        height: auto; /* Maintain aspect ratio */
-        max-height: 100vh; /* Don't exceed viewport height */
+    .tagline {
+        font-size: 16px; /* Smaller tagline font for mobile */
     }
-
-    .image {
-        flex-direction: column; /* Stack images and videos vertically */
-        align-items: center; /* Center align items */
+    .main-burger {
+        display: flex; /* Show burger icon on mobile */
+    }
+    .menu-content {
+        display: none; /* Hide menu initially */
+    }
+    .menu-content.active {
+        display: block; /* Show menu when active */
     }
 }
+
+
+.splash img, .splash video {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100vh; /* Don't exceed viewport height */
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+    .splash .wrapper {
+        flex-direction: column; /* Stack content vertically */
+    }
+}
+.image {
+    display: flex;
+    flex-wrap: wrap; /* Ensure images wrap */
+    justify-content: center; /* Center images on smaller screens */
+    gap: 10px; /* Add spacing */
+}
+
+.image a img, .image a video {
+    width: 60%; /* Increase image size to 60% */
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .image a img, .image a video {
+        width: 80%; /* Increase size further for smaller screens */
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .image a img, .image a video {
+        width: 100%; /* Full width on very small screens */
+    }
+}
+
+/* For smaller devices */
+@media (max-width: 768px) {
+    .cream .text {
+        text-align: center; /* Center-align the text */
+        padding: 10px; /* Add padding for spacing */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .contact-section {
+        font-size: 12px; /* Smaller font for mobile */
+        padding: 10px; /* Less padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section h2 {
+        font-size: 1.2rem; /* Smaller heading size */
+    }
+}
+
+.modal-content {
+    width: 80%; /* Reduce width for smaller screens */
+    max-width: 400px; /* Maximum width for desktop */
+    height: auto; /* Flexible height */
+    max-height: 90vh; /* Prevent modal from exceeding screen height */
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* Full width on mobile */
+        max-width: none; /* Remove max-width */
+    }
+}
+
+.button {
+    padding: 12px 24px;
+    font-size: 16px; /* Larger text for better touch experience */
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .button {
+        padding: 10px 20px; /* Slightly smaller padding for mobile */
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
