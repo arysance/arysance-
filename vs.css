@@ -15,41 +15,10 @@ header {
     padding: 20px;
     border-bottom: 1px solid #ddd;
     position: relative;
-    display: flex;
-    justify-content: center; /* Center the logo */
-    align-items: center; /* Center vertically */
-    flex-direction: column; /* Stack items vertically */
 }
 
-.logo-image {
-    width: 100%; /* Responsive for desktop */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.wrapper {
-    position: relative; /* Ensure positioning for video and image */
-    overflow: hidden; /* Hide overflow if needed */
-}
-
-/* Default styles for video and image (for PC) */
-.splash-video, .splash-image {
-    width: auto; /* Maintain original size for PC */
-    height: auto; /* Maintain original size for PC */
-}
-
-/* Mobile styles */
-@media (max-width: 768px) { /* Adjust the max-width as needed */
-    .splash-video,
-    .splash-image {
-        width: 100%; /* Match the size to Main arysance.jpg on mobile */
-        height: auto; /* Maintain aspect ratio */
-        object-fit: cover; /* Cover the area without distortion */
-    }
-
-    .logo-image {
-        width: 100%; /* Ensure the logo image is also responsive */
-        height: auto; /* Maintain aspect ratio */
-    }
+.logo img {
+    max-width: 150px;
 }
 
 nav {
@@ -172,43 +141,26 @@ nav ul li a {
     padding: 0 20px;
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Stack the navigation items vertically */
-        display: none; /* Hide menu initially */
+        flex-direction: column;
+        display: none;
     }
 
     nav.active ul {
-        display: flex; /* Show menu when active */
-    }
-
-    .top-bar {
-        flex-direction: column; /* Stack the items vertically */
-    }
-
-    .tagline {
-        font-size: 16px; /* Smaller tagline font for mobile */
-    }
-
-    .main-burger {
-        display: flex; /* Show burger icon on mobile */
-    }
-
-    .menu-content {
-        display: none; /* Hide menu initially */
-    }
-
-    .menu-content.active {
-        display: block; /* Show menu when active */
+        display: flex;
     }
 }
 
-@media screen and (max-width: 600px) {
-    h1 {
+
+@media screen and (max-width: 600px)
+{
+    h1{
         font-size: 36px;
         line-height: 50px;
     }
+
 }
 
 .image {
@@ -233,19 +185,145 @@ nav ul li a {
 
 /* For mobile screens */
 @media (max-width: 768px) {
-    .three-d-image {
-        max-height: calc(10vh); /* Ensure that images/videos do not exceed the top bar height */
+    .top-bar {
+        flex-direction: column; /* Stack the items vertically */
+    }
+    .tagline {
+        font-size: 16px; /* Smaller tagline font for mobile */
+    }
+    .main-burger {
+        display: flex; /* Show burger icon on mobile */
+    }
+    .menu-content {
+        display: none; /* Hide menu initially */
+    }
+    .menu-content.active {
+        display: block; /* Show menu when active */
+    }
+}
+
+
+.splash img, .splash video {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100vh; /* Don't exceed viewport height */
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+    .splash .wrapper {
+        flex-direction: column; /* Stack content vertically */
+    }
+}
+.image {
+    display: flex;
+    flex-wrap: wrap; /* Ensure images wrap */
+    justify-content: center; /* Center images on smaller screens */
+    gap: 10px; /* Add spacing */
+}
+
+.image a img, .image a video {
+    width: 60%; /* Increase image size to 60% */
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .image a img, .image a video {
+        width: 80%; /* Increase size further for smaller screens */
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .image a img, .image a video {
+        width: 100%; /* Full width on very small screens */
+    }
+}
+
+/* For smaller devices */
+@media (max-width: 768px) {
+    .cream .text {
+        text-align: center; /* Center-align the text */
+        padding: 10px; /* Add padding for spacing */
+        font-size: 14px; /* Adjust font size */
     }
 
-    .splash img,
-    .splash video {
-        width: 100%; /* Full width */
-        height: auto; /* Maintain aspect ratio */
-        max-height: 100vh; /* Don't exceed viewport height */
+    .contact-section {
+        font-size: 12px; /* Smaller font for mobile */
+        padding: 10px; /* Less padding */
     }
+}
 
-    .image {
-        flex-direction: column; /* Stack images and videos vertically */
-        align-items: center; /* Center align items */
+@media (max-width: 480px) {
+    .contact-section h2 {
+        font-size: 1.2rem; /* Smaller heading size */
     }
+}
+
+.modal-content {
+    width: 80%; /* Reduce width for smaller screens */
+    max-width: 400px; /* Maximum width for desktop */
+    height: auto; /* Flexible height */
+    max-height: 90vh; /* Prevent modal from exceeding screen height */
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* Full width on mobile */
+        max-width: none; /* Remove max-width */
+    }
+}
+
+.button {
+    padding: 12px 24px;
+    font-size: 16px; /* Larger text for better touch experience */
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .button {
+        padding: 10px 20px; /* Slightly smaller padding for mobile */
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+/* change for mobile main logo.
+/* Ensure the wrapper takes full width and height */
+.splash {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.wrapper {
+    position: absolute; /* Position absolutely within splash */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Use flexbox to arrange items */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Video styles */
+.splash-video {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover entire area */
+}
+
+/* Image styles */
+.splash-image {
+    position: absolute; /* Position absolutely within wrapper */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover entire area */
+    z-index: 1; /* Ensure the image is behind the video */
 }
