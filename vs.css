@@ -22,21 +22,33 @@ header {
 }
 
 .logo-image {
-    max-height: calc(10vh); /* Adjust this value based on your top bar height */
-    width: auto; /* Maintain aspect ratio */
+    width: 100%; /* Responsive for desktop */
+    height: auto; /* Maintain aspect ratio */
 }
 
-/* Optional: Center the logo in the top bar */
-.top-bar .logo {
-    flex: 1; /* Allow the logo to take available space */
-    display: flex;
-    justify-content: center; /* Center the logo */
+.wrapper {
+    position: relative; /* Ensure positioning for video and image */
+    overflow: hidden; /* Hide overflow if needed */
 }
 
-/* Ensuring top bar styles apply correctly on mobile */
-@media (max-width: 768px) {
+/* Default styles for video and image (for PC) */
+.splash-video, .splash-image {
+    width: auto; /* Maintain original size for PC */
+    height: auto; /* Maintain original size for PC */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) { /* Adjust the max-width as needed */
+    .splash-video,
+    .splash-image {
+        width: 100%; /* Match the size to Main arysance.jpg on mobile */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Cover the area without distortion */
+    }
+
     .logo-image {
-        max-height: calc(10vh); /* Ensure the logo does not exceed the height of the top bar */
+        width: 100%; /* Ensure the logo image is also responsive */
+        height: auto; /* Maintain aspect ratio */
     }
 }
 
