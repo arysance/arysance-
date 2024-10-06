@@ -15,9 +15,8 @@
             body {
                 margin: 0;
                 font-family: 'Josefin Sans', sans-serif;
-                line-height: 1.5; /* Improved readability */
             }
-        
+    
             /* Styling the top bar with menu and the tagline */
             .top-bar {
                 display: flex;
@@ -28,15 +27,15 @@
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                 position: relative;
                 z-index: 1000;
-                width: 100%; /* Ensure full width */
             }
-        
+    
             .burgercontainer {
                 cursor: pointer;
                 position: relative;
             }
-        
+    
             .main-burger {
+                cursor: pointer;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -44,7 +43,7 @@
                 width: 40px;
                 height: 30px;
             }
-        
+    
             .main-burger span {
                 display: block;
                 width: 30px;
@@ -53,9 +52,9 @@
                 margin: 5px 0;
                 transition: all 0.3s;
             }
-        
+    
             .menu-content {
-                display: none; /* Hide menu by default */
+                display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -63,27 +62,27 @@
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                 z-index: 1000;
             }
-        
+    
             .menu-content ul {
                 list-style: none;
                 margin: 0;
                 padding: 10px 0;
             }
-        
+    
             .menu-content ul li {
                 padding: 10px 20px;
                 border-bottom: 1px solid #ddd;
             }
-        
+    
             .menu-content ul li a {
                 text-decoration: none;
                 color: #333;
             }
-        
+    
             .menu-content ul li:hover {
                 background-color: #f7f7f7;
             }
-        
+    
             /* Styling the tagline */
             .tagline {
                 font-family: 'Playfair Display', serif;
@@ -96,65 +95,75 @@
                 font-weight: 700;
                 letter-spacing: 1px;
             }
-        
-            /* Adjustments for splash section */
+    
+            /* Adjustments for splash section to remove gaps */
             .splash {
                 position: relative;
                 margin: 0;
                 padding: 0;
             }
-        
+    
             .splash .wrapper {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
             }
-        
-            .splash img {
+    
+            .splash .logo {
                 display: block;
-                width: 100%; /* Ensure full width */
-                max-height: 80vh; /* Reduce image size on mobile */
+                width: 100%;
+                max-height: 100vh;
                 object-fit: cover;
                 margin: 0;
                 padding: 0;
             }
-        
+    
+            .splash img {
+                display: block;
+                width: 100%;
+                max-height: 100vh;
+                object-fit: cover;
+                margin: 0;
+                padding: 0;
+            }
+    
             /* Contact Us Section */
             .contact-section {
                 font-family: 'Garamond', serif;
                 background-color: #556B8E;
                 padding: 20px;
-                text-align: center; /* Center content on mobile */
+                text-align: right;
                 color: #EAE0D5;
-                font-size: 14pt; /* Adjust font size for better readability */
+                font-size: 13.5pt;
                 margin-top: 50px;
             }
-        
+    
             .contact-section h2 {
                 font-size: 1.5rem;
                 margin-bottom: 10px;
                 color: #EAE0D5;
             }
-        
+    
             .contact-section p {
                 margin: 5px 0;
                 color: #EAE0D5;
             }
-        
+    
             .contact-section a {
                 color: #EAE0D5;
                 text-decoration: none;
                 font-weight: bold;
             }
-        
+    
             .contact-section a:hover {
                 text-decoration: underline;
             }
-        
+    
             .contact-section .social-icons {
                 margin-top: 10px;
+                text-align: right;
             }
-        
+    
             .contact-section .social-icons img {
                 width: 30px;
                 height: 30px;
@@ -162,7 +171,7 @@
                 cursor: pointer;
                 vertical-align: middle;
             }
-        
+    
             /* Styles for the "Our Watch" section */
             .cream.first.left.wide.animate {
                 position: relative;
@@ -174,46 +183,45 @@
                 gap: 20px;
                 flex-wrap: wrap;
             }
-        
+    
             .cream .text {
                 flex: 1;
-                max-width: 100%; /* Allow text to take full width on mobile */
+                max-width: 50%;
                 color: #a9a9a9;
                 font-family: 'Monotype Corsiva', cursive;
                 text-align: center;
             }
-        
+    
             .cream .text h3 a {
                 color: #b2beb5;
                 font-family: 'Edwardian Script ITC', cursive;
             }
-        
+    
             .cream .image {
                 display: flex;
                 flex-direction: row;
                 gap: 10px;
-                width: 100%; /* Allow images to take full width */
-                justify-content: center; /* Center images */
+                width: 70%;
+                max-width: 70%;
             }
-        
+    
             .cream .image img {
-                width: 100%; /* Images stack on mobile */
-                max-width: 300px; /* Set a max width for images */
+                width: 50%;
                 height: auto;
                 object-fit: cover;
             }
-        
+    
             .cream .video {
                 width: 98%;
                 max-width: 98%;
             }
-        
+    
             .cream .video video {
                 width: 100%;
                 height: auto;
                 object-fit: cover;
             }
-        
+    
             /* Button styling */
             .button {
                 display: inline-block;
@@ -225,11 +233,11 @@
                 border-radius: 5px;
                 transition: background-color 0.3s;
             }
-        
+    
             .button:hover {
                 background-color: #555;
             }
-        
+    
             /* Animation for the "GOLDEN SPRUCE" text */
             @keyframes moveRight {
                 0% {
@@ -239,9 +247,10 @@
                     transform: translateX(100%);
                 }
             }
-        
+    
             .animated-text {
                 font-family: 'Cinzel', serif;
+                font-style: normal;
                 font-size: 2rem;
                 color: #b2beb5;
                 white-space: nowrap;
@@ -251,20 +260,20 @@
                 left: 0;
                 animation: moveRight 10s linear infinite;
             }
-        
+    
             /* Styling the section to apply requested font and colors */
             .white.second.right.narrow.animate .text h2,
             .white.second.right.narrow.animate .text h3 a {
                 color: #b2beb5;
                 font-family: 'Edwardian Script ITC', cursive;
             }
-        
+    
             .white.second.right.narrow.animate .text p,
             .white.second.right.narrow.animate .text i {
                 color: #a9a9a9;
                 font-family: 'Monotype Corsiva', cursive;
             }
-        
+    
             /* Modal styles */
             .modal {
                 display: none; /* Hidden by default */
@@ -275,69 +284,65 @@
                 width: 100%; /* Full width */
                 height: 100%; /* Full height */
                 overflow: auto; /* Enable scroll if needed */
-                background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
             }
-        
+    
             .modal-content {
                 background-color: #fefefe;
                 margin: 15% auto; /* 15% from the top and centered */
                 padding: 20px;
                 border: 1px solid #888;
                 width: 80%; /* Could be more or less, depending on screen size */
-                max-width: 500px; /* Limit max width */
             }
-        
+    
             .close {
                 color: #aaa;
                 float: right;
                 font-size: 28px;
                 font-weight: bold;
             }
-        
+    
             .close:hover,
             .close:focus {
                 color: black;
                 text-decoration: none;
                 cursor: pointer;
             }
-        
-            /* Responsive styles */
-            @media (max-width: 768px) {
-                .top-bar {
-                    justify-content: flex-start; /* Align menu to left */
-                }
-        
-                .tagline {
-                    font-size: 14px; /* Smaller font size for mobile */
-                }
-        
-                .splash img {
-                    width: 100%; /* Ensure full width matches top bar */
-                }
-        
-                .contact-section h2 {
-                    font-size: 1.2rem; /* Adjust heading size */
-                }
-        
-                .animated-text {
-                    font-size: 1.5rem; /* Smaller animated text */
-                }
+    
+            /* Style the form inside the modal */
+            #subscription-form {
+                display: flex;
+                flex-direction: column;
             }
-        
-            @media (max-width: 480px) {
-                .splash img {
-                    max-height: 50vh; /* Further reduce image size on very small screens */
-                }
-        
-                .contact-section {
-                    font-size: 12pt; /* Adjust font size for better readability */
-                }
+    
+            #subscription-form label {
+                margin: 10px 0 5px;
+            }
+    
+            #subscription-form input[type="email"],
+            #subscription-form input[type="password"] {
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+    
+            #subscription-form input[type="submit"] {
+                padding: 10px;
+                background-color: #333;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+    
+            #subscription-form input[type="submit"]:hover {
+                background-color: #555;
             }
         </style>
-        
     </head>
-<body>
-
+    <body>
+    
     <div class="top-bar">
         <div class="burgercontainer">
             <i class="main-burger">
@@ -359,394 +364,265 @@
         <div class="tagline">SINCE 1993</div>
     </div>
     
+    <header>
+        <a href="the watch.html" title="Arysance" rel="home" class="logo">
+            <img src="Main arysance.jpg" height="400" width="650" alt="Arysance">
+            <img src="Main arysance.jpg" alt="Arysance">
+        </a>
+        
+    </header>
+    
+    
+    <section class="splash animate wideImg">
+        <div class="wrapper">
+            <video class="logo" src="Project 2.mp4" alt="Arysance" autoplay loop muted></video>
+            <img src="20240824_163210.jpg" alt="background">
+        </div>
+    </section>
+    
+    <section class="cream first left wide animate">
+        <div class="wrapper cf">
+            <div class="text">
+                <h3><a href="the watch.html">The Pillars of Arysance</a></h3>
+                <p>At Arysance, every timepiece is a masterpiece of precision and artistry. Our commitment to excellence is reflected in the meticulous research and innovative design that shape each watch's best identity. Guided by the five pillars of Arysance craftsmanship, we meticulously refine every detail, ensuring each watch is as distinctive as the individual who wears it.</p>
+                <ul>
+                    <li>Unveiling the Extraordinary</li>
+                    <li>Timeless Elegance: Honoring and Innovating</li>
+                    <li>Premium</li>
+                    <li>The Finest Materials</li>
+                    <li>A Singular Vision</li>
+                </ul>
+                <a class="button" title="Learn more about our watches" href="the watch.html">Learn More About Our Watch</a>
+            </div>
+            <style>
+                .image {
+                    display: flex;
+                    flex-wrap: wrap; /* Ensure the images wrap if there’s not enough space */
+                    justify-content: space-around; /* Space between the images */
+                    gap: 10px; /* Add some space between the images */
+                }
+            
+                .image a img {
+                    width: 60%; /* Increase image size to 60% of its original size */
+                    height: auto; /* Maintain aspect ratio */
+                    max-width: 100%; /* Ensure the images don't overflow */
+                }
+            
+                /* Media Query for mobile devices */
+                @media (max-width: 768px) {
+                    .image a img {
+                        width: 80%; /* Further increase size on smaller screens */
+                    }
+                }
+            
+                @media (max-width: 480px) {
+                    .image a img {
+                        width: 100%; /* Full width on very small screens */
+                    }
+                }
+            </style>
+            
+            <div class="image">
+                <a href="the watch.html#IMG_1429">
+                    <img src="green best.jpg" alt="Arysance Watch" class="three-d-image">
+                    <img src="green best.jpg" alt="Arysance Watch" class="three-d-image main-image">
+                </a>
+                <a href="the watch.html#IMG_1429">
+                    <video controls class="three-d-image" alt="ARYSANCE - GREYTITUDE WATCH video">
+                    <video controls class="three-d-image">
+                        <source src="ARYSANCE - GREYTITUDE WATCH video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+                <a href="the watch.html#IMG_1429">
+                    <img src="IMG_1579.jpg" alt="Arysance Watch" class="three-d-image">
+                </a>
+            </div>
+            
+            
+            
+            
+            <div class="video">
+                <video src="green red.mp4" autoplay loop muted></video>
+            </div>
+            <!-- Animated text -->
+            <div class="animated-text">GOLDEN SPRUCE</div>
+        </div>
+    </section>
+    
+    <section class="white second right narrow animate">
+        <div class="wrapper cf">
+            <div class="text">
+                <h2>Unveiling Excellence</h2>
+                <h3><a href="watch.html">Discover the Arysance Legacy</a></h3>
+                <i>Where unparalleled craftsmanship meets timeless design</i>
+                <p>At Arysance, every watch is a masterpiece, meticulously crafted to embody the perfect blend of tradition and innovation. Our collection reflects an unwavering commitment to precision and luxury, designed for connoisseurs who seek both elegance and performance. Experience a timepiece that transcends ordinary and celebrates the extraordinary.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Us Section with id for scrolling -->
+    <section id="contact-us" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Speak to us on <a href="tel:+917827735779">+91 78277 35779</a></p>
+        <p>Write to us at <a href="mailto:arysance@gmail.com">arysance@gmail.com</a></p>
+        <p>Direct message us at <a href="mailto:arysance@gmail.com">arysance@gmail.com</a></p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/arysance/" target="_blank">
+                <img src="instagram.png" alt="Instagram">
+            </a>
+            <a href="https://twitter.com/arysance" target="_blank">
+                <img src="icons8-twitter-30.png" alt="Twitter">
+            </a>
+        </div>
+    </section>
+    
+    <!-- Popup Modal -->
     <style>
-        /* Add this to your existing CSS */
-        /* Ensures full-width for top bar */
-        .top-bar {
+        @font-face {
+            font-family: 'Dream Avenue';
+            src: url('path-to-your-font/DreamAvenue.ttf'); /* Ensure you have the correct path to the font */
+        }
+    
+        /* Modal Overlay */
+        #popupModal {
+            display: none;
+            position: fixed;
+            z-index: 1200;
+            left: 0;
+            top: 0;
             width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+            overflow: auto; /* Enable scrolling if needed */
+            overflow: hidden; /* Disable scrolling on the overlay */
         }
     
-        /* Ensures the splash image is equal to the width of the top bar */
-        .splash-image,
-        .splash-video {
-            width: 100%; /* Make the splash image and video full-width */
-            max-height: calc(100vh - 60px); /* Adjust max-height based on your design */
-            object-fit: cover; /* Ensure they cover the area */
-            margin: 0; /* Remove any margins */
+        /* Modal Content */
+    
+    @@ -501,10 +502,9 @@
+            color: #fff;
+            width: 80%; /* Take 80% of the screen width */
+            max-width: 400px; /* Ensure a maximum width for desktop */
+            height: auto; /* Adapt to content */
+            max-height: 90vh; /* Prevent modal from exceeding 90% of the viewport height */
+            margin: 10% auto; /* Center horizontally and give top margin */
+            overflow-y: auto; /* Allow scrolling if content overflows */
+            height: 50vh; /* Set height to half the viewport height */
+            margin: 25vh auto; /* Center vertically and horizontally */
+            overflow-y: hidden; /* Prevent scrolling inside the modal */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow for a better look */
         }
     
-        /* Make the logo image responsive */
-        .logo-image {
-            width: 100%; /* Make logo responsive */
-            max-width: 100%; /* Ensure no overflow */
-            height: auto; /* Maintain aspect ratio */
-        }
     
-        /* Responsive styling for mobile devices */
+    
+    @@ -562,7 +562,6 @@
         @media (max-width: 768px) {
-            .top-bar {
-                justify-content: flex-start; /* Align items to the left on mobile */
+            .modal-content {
+                width: 90%; /* Wider for smaller screens */
+                max-width: 90%;
+                padding: 15px;
             }
     
-            .tagline {
-                text-align: center; /* Center tagline for mobile if needed */
+    
+    @@ -579,100 +578,99 @@
+        @media (max-width: 480px) {
+            .modal-content {
+                width: 95%; /* Full width on very small screens */
+                max-width: 95%;
+                padding: 10px;
+                border-radius: 0; /* Remove border radius for full-width */
+                margin: 5% auto; /* Centering with reduced top margin */
+                height: auto; /* Allow height to adapt */
+                height: 50vh; /* Maintain half-screen height */
+                margin: 25vh auto; /* Center vertically */
             }
     
-            .splash-video {
-                /* Ensure the video behaves similarly to the splash image */
-                height: auto; /* Maintain aspect ratio */
+            .modal-content h2 {
+                font-size: 1em;
+            }
+    
+            .modal-content input[type="submit"] {
+                padding: 6px 12px;
+                font-size: 0.8em;
             }
         }
     </style>
     
-
-<section class="cream first left wide animate">
-    <div class="wrapper cf">
-        <div class="text">
-            <h3><a href="the watch.html">The Pillars of Arysance</a></h3>
-            <p>At Arysance, every timepiece is a masterpiece of precision and artistry. Our commitment to excellence is reflected in the meticulous research and innovative design that shape each watch's best identity. Guided by the five pillars of Arysance craftsmanship, we meticulously refine every detail, ensuring each watch is as distinctive as the individual who wears it.</p>
-            <ul>
-                <li>Unveiling the Extraordinary</li>
-                <li>Timeless Elegance: Honoring and Innovating</li>
-                <li>Premium</li>
-                <li>The Finest Materials</li>
-                <li>A Singular Vision</li>
-            </ul>
-            <a class="button" title="Learn more about our watches" href="the watch.html">Learn More About Our Watch</a>
-        </div>
-        <style>
-            .image {
-                display: flex;
-                flex-wrap: wrap; /* Ensure the images wrap if there’s not enough space */
-                justify-content: space-around; /* Space between the images */
-                gap: 10px; /* Add some space between the images */
-            }
-        
-            .image a img {
-                width: 60%; /* Increase image size to 60% of its original size */
-                height: auto; /* Maintain aspect ratio */
-                max-width: 100%; /* Ensure the images don't overflow */
-            }
-        
-            /* Media Query for mobile devices */
-            @media (max-width: 768px) {
-                .image a img {
-                    width: 80%; /* Further increase size on smaller screens */
-                }
-            }
-        
-            @media (max-width: 480px) {
-                .image a img {
-                    width: 100%; /* Full width on very small screens */
-                }
-            }
-        </style>
-        
-        <div class="top-bar">
-            <div class="burgercontainer">
-                <i class="main-burger">
-                    <span class="top"></span>
-                    <span class="mid"></span>
-                    <span class="bot"></span>
-                    MENU
-                </i>
-                <div class="menu-content">
-                    <ul>
-                        <li><a href="index.html#featured-properties" title="A selection of Arysance projects">Featured Properties</a></li>
-                        <li><a href="the watch.html" title="The five pillars of Arysance">The Watch</a></li>
-                        <li><a href="#contact-us" title="Get in touch with Arysance">Enquiries</a></li>
-                    </ul>
-                </div>
-            </div>
-        
-            <!-- The creative tagline in the middle of the top bar -->
-            <div class="tagline">SINCE 1993</div>
-        </div>
-        
-        <header>
-            <a href="the watch.html" title="Arysance" rel="home" class="logo">
-                <img src="Main arysance.jpg" alt="Arysance" class="logo-image">
-            </a>
-        </header>
-        
-        <section class="splash animate wideImg">
-            <div class="wrapper">
-                <video class="logo" src="Project 2.mp4" alt="Arysance" autoplay loop muted></video>
-                <img src="20240824_163210.jpg" alt="background" class="splash-image"> <!-- Add class for better control -->
-            </div>
-        </section>
-        <style>
-            /* Add this to your existing CSS */
-            /* Ensures full-width for top bar */
-            .top-bar {
-                width: 100%;
-            }
-        
-            /* Ensures the splash image is equal to the width of the top bar */
-            .splash-image {
-                width: 100%; /* Make the splash image full-width */
-                max-height: calc(100vh - 60px); /* Adjust max-height based on your design */
-                object-fit: cover; /* Ensure the image covers the area */
-                margin: 0; /* Remove any margins */
-            }
-        
-            /* Responsive styling for mobile devices */
-            @media (max-width: 768px) {
-                .top-bar {
-                    justify-content: flex-start; /* Align items to the left on mobile */
-                }
-        
-                .tagline {
-                    text-align: center; /* Center tagline for mobile if needed */
-                }
-        
-                /* Make sure the logo image is also responsive */
-                .logo-image {
-                    width: 100%; /* Make logo responsive */
-                    max-width: 100%; /* Ensure no overflow */
-                    height: auto; /* Maintain aspect ratio */
-                }
-            }
-        </style>
-                
-        
-        
-        
-        
-        
-        <div class="video">
-            <video src="green red.mp4" autoplay loop muted></video>
-        </div>
-        <!-- Animated text -->
-        <div class="animated-text">GOLDEN SPRUCE</div>
-    </div>
-</section>
-
-<section class="white second right narrow animate">
-    <div class="wrapper cf">
-        <div class="text">
-            <h2>Unveiling Excellence</h2>
-            <h3><a href="watch.html">Discover the Arysance Legacy</a></h3>
-            <i>Where unparalleled craftsmanship meets timeless design</i>
-            <p>At Arysance, every watch is a masterpiece, meticulously crafted to embody the perfect blend of tradition and innovation. Our collection reflects an unwavering commitment to precision and luxury, designed for connoisseurs who seek both elegance and performance. Experience a timepiece that transcends ordinary and celebrates the extraordinary.</p>
+    <div id="popupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Subscribe to ARYSANCE</h2>
+            <form id="subscription-form" action="https://formsubmit.co/arysance@gmail.com" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <input type="submit" value="Subscribe">
+            </form>
         </div>
     </div>
-</section>
-
-<!-- Contact Us Section with id for scrolling -->
-<section id="contact-us" class="contact-section">
-    <h2>Contact Us</h2>
-    <p>Speak to us on <a href="tel:+917827735779">+91 78277 35779</a></p>
-    <p>Write to us at <a href="mailto:arysance@gmail.com">arysance@gmail.com</a></p>
-    <p>Direct message us at <a href="mailto:arysance@gmail.com">arysance@gmail.com</a></p>
-    <div class="social-icons">
-        <a href="https://www.instagram.com/arysance/" target="_blank">
-            <img src="instagram.png" alt="Instagram">
-        </a>
-        <a href="https://twitter.com/arysance" target="_blank">
-            <img src="icons8-twitter-30.png" alt="Twitter">
-        </a>
-    </div>
-</section>
-
-<!-- Popup Modal -->
-<style>
-    @font-face {
-        font-family: 'Dream Avenue';
-        src: url('path-to-your-font/DreamAvenue.ttf'); /* Ensure you have the correct path to the font */
-    }
-
-    /* Modal Overlay */
-    #popupModal {
-        display: none;
-        position: fixed;
-        z-index: 1200;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
-        overflow: hidden; /* Disable scrolling on the overlay */
-    }
-
-    /* Modal Content */
-    .modal-content {
-        background: url('IMG_1579(1)(1).png') no-repeat center center;
-        background-size: cover;
-        padding: 20px;
-        border-radius: 10px;
-        color: #fff;
-        width: 80%; /* Take 80% of the screen width */
-        max-width: 400px; /* Ensure a maximum width for desktop */
-        height: auto; /* Set height to auto to adjust to content */
-        max-height: calc(100vh - 60px); /* Adjusted height based on top bar */
-        margin: 10% auto; /* Center vertically and horizontally */
-        overflow-y: auto; /* Allow scrolling if content exceeds max height */
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow for a better look */
-    }
-
-    /* Modal Header */
-    .modal-content h2 {
-        font-family: 'Dream Avenue', sans-serif;
-        font-size: 1.5em;
-    }
-
-    /* Form Labels and Inputs */
-    .modal-content label, .modal-content input {
-        display: block;
-        width: 100%;
-        margin: 10px 0;
-        color: #fff;
-    }
-
-    .modal-content input[type="email"], .modal-content input[type="password"] {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent input */
-        color: #fff;
-    }
-
-    .modal-content input[type="submit"] {
-        background-color: #fff;
-        color: #000;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-size: 1em;
-        border-radius: 5px;
-    }
-
-    .modal-content input[type="submit"]:hover {
-        background-color: #ddd;
-    }
-
-    /* Close Button */
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .close:hover, .close:focus {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    /* Media Queries for Responsiveness */
-    @media (max-width: 768px) {
-        .modal-content {
-            width: 90%; /* Wider for smaller screens */
-            padding: 15px;
-        }
-
-        .modal-content h2 {
-            font-size: 1.2em;
-        }
-
-        .modal-content input[type="submit"] {
-            padding: 8px 16px;
-            font-size: 0.9em;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .modal-content {
-            width: 95%; /* Full width on very small screens */
-            padding: 10px;
-            border-radius: 0; /* Remove border radius for full-width */
-            max-height: calc(100vh - 60px); /* Maintain height relative to top bar */
-            margin: 10% auto; /* Center vertically */
-        }
-
-        .modal-content h2 {
-            font-size: 1em;
-        }
-
-        .modal-content input[type="submit"] {
-            padding: 6px 12px;
-            font-size: 0.8em;
-        }
-    }
-</style>
-
-<div id="popupModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Subscribe to ARYSANCE</h2>
-        <form id="subscription-form" action="https://formsubmit.co/arysance@gmail.com" method="POST">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <input type="submit" value="Subscribe">
-        </form>
-    </div>
-</div>
-
-<script>
-    // Modal Display Control
-    var modal = document.getElementById("popupModal");
-    var closeModal = document.getElementsByClassName("close")[0];
-
-    // Show the modal on the first click
-    document.body.addEventListener('click', function () {
-        modal.style.display = "block";
-    }, { once: true });
-
-    // Close the modal
-    closeModal.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // Close modal if user clicks outside the modal content
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
-
-<script>
-     // JavaScript for handling the menu toggle
-     document.addEventListener('DOMContentLoaded', function() {
-        document.querySelector('.burgercontainer').addEventListener('click', function() {
-            var menuContent = document.querySelector('.menu-content');
-            menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
-        });
-
-        // Close the menu when a menu option is clicked
-        document.querySelectorAll('.menu-content ul li a').forEach(function(menuLink) {
-            menuLink.addEventListener('click', function() {
-                document.querySelector('.menu-content').style.display = 'none';
-            });
-        });
-
-        // Popup logic
+    
+    <script>
+        // Modal Display Control
         var modal = document.getElementById("popupModal");
-        var span = document.getElementsByClassName("close")[0];
-
-        // Show the modal after 1 second
-        setTimeout(function() {
+        var closeModal = document.getElementsByClassName("close")[0];
+    
+        // Show the modal on the first click
+        document.body.addEventListener('click', function () {
             modal.style.display = "block";
-        }, 1000);
-
-        // Close the modal when the user clicks on <span> (x)
-        span.onclick = function() {
+        }, { once: true });
+    
+        // Close the modal
+        closeModal.onclick = function() {
             modal.style.display = "none";
         }
-
-        // Close the modal if the user clicks anywhere outside of the modal
+    
+        // Close modal if user clicks outside the modal content
         window.onclick = function(event) {
-            if (event.target == modal) {
+            if (event.target === modal) {
                 modal.style.display = "none";
             }
         }
-    });
-</script>
-
+    </script>
+    
+    <script>
+         // JavaScript for handling the menu toggle
+         document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.burgercontainer').addEventListener('click', function() {
+                var menuContent = document.querySelector('.menu-content');
+                menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+            });
+    
+            // Close the menu when a menu option is clicked
+            document.querySelectorAll('.menu-content ul li a').forEach(function(menuLink) {
+                menuLink.addEventListener('click', function() {
+                    document.querySelector('.menu-content').style.display = 'none';
+                });
+            });
+    
+            // Popup logic
+            var modal = document.getElementById("popupModal");
+            var span = document.getElementsByClassName("close")[0];
+    
+            // Show the modal after 1 second
+            setTimeout(function() {
+                modal.style.display = "block";
+            }, 1000);
+    
+            // Close the modal when the user clicks on <span> (x)
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+    
+            // Close the modal if the user clicks anywhere outside of the modal
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
 
 
 </body>
