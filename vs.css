@@ -41,12 +41,17 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Splash Section */
 .splash {
+    position: relative; /* Ensure position is relative for child absolute positioning */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent overflow */
     background: url('wp-content/themes/Arysance/assets/img/gold-hero-bg.jpg') no-repeat center center;
     background-size: cover;
     color: #fff;
     text-align: center;
-    padding: 100px 20px;
+    padding: 100px 20px; /* Consider adjusting for mobile */
 }
 
 .splash .logo {
@@ -58,6 +63,7 @@ nav ul li a {
     font-size: 2em;
 }
 
+/* Section Styles */
 .section {
     padding: 60px 20px;
 }
@@ -135,13 +141,14 @@ nav ul li a {
     margin: 4px 0;
 }
 
+/* Wrapper */
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Responsive */
+/* Responsive Styles */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -151,70 +158,53 @@ nav ul li a {
     nav.active ul {
         display: flex;
     }
-}
 
-
-@media screen and (max-width: 600px)
-{
-    h1{
-        font-size: 36px;
-        line-height: 50px;
+    .splash {
+        padding: 50px 20px; /* Adjust padding for mobile */
     }
 
-}
-
-.image {
-    display: flex;
-    justify-content: center; /* Center images horizontally */
-    align-items: center; /* Center images vertically */
-    perspective: 1000px; /* Set the perspective for 3D effect */
-}
-
-.three-d-image {
-    width: 200px; /* Set your desired width */
-    height: auto; /* Maintain aspect ratio */
-    margin: 10px; /* Space between images */
-    transition: transform 0.3s; /* Smooth transition for the hover effect */
-    transform-style: preserve-3d; /* Enable 3D effect */
-}
-
-.three-d-image:hover {
-    transform: rotateY(10deg) rotateX(10deg); /* Rotate on hover for 3D effect */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-}
-
-/* For mobile screens */
-@media (max-width: 768px) {
-    .top-bar {
-        flex-direction: column; /* Stack the items vertically */
-    }
-    .tagline {
-        font-size: 16px; /* Smaller tagline font for mobile */
-    }
-    .main-burger {
-        display: flex; /* Show burger icon on mobile */
-    }
-    .menu-content {
-        display: none; /* Hide menu initially */
-    }
-    .menu-content.active {
-        display: block; /* Show menu when active */
+    .splash .logo {
+        max-width: 80px; /* Smaller logo on mobile */
     }
 }
 
-
+/* Splash Video and Image */
 .splash img, .splash video {
     width: 100%; /* Full width */
     height: auto; /* Maintain aspect ratio */
     max-height: 100vh; /* Don't exceed viewport height */
 }
 
-/* For mobile screens */
-@media (max-width: 768px) {
-    .splash .wrapper {
-        flex-direction: column; /* Stack content vertically */
-    }
+.wrapper {
+    position: absolute; /* Position absolutely within splash */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Use flexbox to arrange items */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
 }
+
+/* Video Styles */
+.splash-video {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover entire area */
+}
+
+/* Image Styles */
+.splash-image {
+    position: absolute; /* Position absolutely within wrapper */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover entire area */
+    z-index: 1; /* Ensure the image is behind the video */
+}
+
+/* Image Gallery */
 .image {
     display: flex;
     flex-wrap: wrap; /* Ensure images wrap */
@@ -242,26 +232,7 @@ nav ul li a {
     }
 }
 
-/* For smaller devices */
-@media (max-width: 768px) {
-    .cream .text {
-        text-align: center; /* Center-align the text */
-        padding: 10px; /* Add padding for spacing */
-        font-size: 14px; /* Adjust font size */
-    }
-
-    .contact-section {
-        font-size: 12px; /* Smaller font for mobile */
-        padding: 10px; /* Less padding */
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-section h2 {
-        font-size: 1.2rem; /* Smaller heading size */
-    }
-}
-
+/* Modal Content */
 .modal-content {
     width: 80%; /* Reduce width for smaller screens */
     max-width: 400px; /* Maximum width for desktop */
@@ -269,7 +240,6 @@ nav ul li a {
     max-height: 90vh; /* Prevent modal from exceeding screen height */
 }
 
-/* For smaller screens */
 @media (max-width: 768px) {
     .modal-content {
         width: 90%; /* Full width on mobile */
@@ -277,6 +247,7 @@ nav ul li a {
     }
 }
 
+/* Button Styles */
 .button {
     padding: 12px 24px;
     font-size: 16px; /* Larger text for better touch experience */
@@ -290,40 +261,28 @@ nav ul li a {
     }
 }
 
-/* change for mobile main logo.
-/* Ensure the wrapper takes full width and height */
-.splash {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Prevent overflow */
+/* Contact Section */
+.contact-section {
+    padding: 10px; /* Less padding */
 }
 
-.wrapper {
-    position: absolute; /* Position absolutely within splash */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex; /* Use flexbox to arrange items */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
+@media (max-width: 768px) {
+    .contact-section {
+        font-size: 12px; /* Smaller font for mobile */
+    }
 }
 
-/* Video styles */
-.splash-video {
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    object-fit: cover; /* Cover entire area */
+@media (max-width: 480px) {
+    .contact-section h2 {
+        font-size: 1.2rem; /* Smaller heading size */
+    }
 }
 
-/* Image styles */
-.splash-image {
-    position: absolute; /* Position absolutely within wrapper */
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    object-fit: cover; /* Cover entire area */
-    z-index: 1; /* Ensure the image is behind the video */
+/* Responsive Styles for Smaller Devices */
+@media (max-width: 768px) {
+    .cream .text {
+        text-align: center; /* Center-align the text */
+        padding: 10px; /* Add padding for spacing */
+        font-size: 14px; /* Adjust font size */
+    }
 }
