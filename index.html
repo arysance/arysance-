@@ -17,7 +17,7 @@
                 font-family: 'Josefin Sans', sans-serif;
                 line-height: 1.5; /* Improved readability */
             }
-    
+        
             /* Styling the top bar with menu and the tagline */
             .top-bar {
                 display: flex;
@@ -28,13 +28,14 @@
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                 position: relative;
                 z-index: 1000;
+                width: 100%; /* Ensure full width */
             }
-    
+        
             .burgercontainer {
                 cursor: pointer;
                 position: relative;
             }
-    
+        
             .main-burger {
                 display: flex;
                 flex-direction: column;
@@ -43,7 +44,7 @@
                 width: 40px;
                 height: 30px;
             }
-    
+        
             .main-burger span {
                 display: block;
                 width: 30px;
@@ -52,7 +53,7 @@
                 margin: 5px 0;
                 transition: all 0.3s;
             }
-    
+        
             .menu-content {
                 display: none; /* Hide menu by default */
                 position: absolute;
@@ -62,27 +63,27 @@
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                 z-index: 1000;
             }
-    
+        
             .menu-content ul {
                 list-style: none;
                 margin: 0;
                 padding: 10px 0;
             }
-    
+        
             .menu-content ul li {
                 padding: 10px 20px;
                 border-bottom: 1px solid #ddd;
             }
-    
+        
             .menu-content ul li a {
                 text-decoration: none;
                 color: #333;
             }
-    
+        
             .menu-content ul li:hover {
                 background-color: #f7f7f7;
             }
-    
+        
             /* Styling the tagline */
             .tagline {
                 font-family: 'Playfair Display', serif;
@@ -95,29 +96,29 @@
                 font-weight: 700;
                 letter-spacing: 1px;
             }
-    
+        
             /* Adjustments for splash section */
             .splash {
                 position: relative;
                 margin: 0;
                 padding: 0;
             }
-    
+        
             .splash .wrapper {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
             }
-    
+        
             .splash img {
                 display: block;
-                width: 100%;
+                width: 100%; /* Ensure full width */
                 max-height: 80vh; /* Reduce image size on mobile */
                 object-fit: cover;
                 margin: 0;
                 padding: 0;
             }
-    
+        
             /* Contact Us Section */
             .contact-section {
                 font-family: 'Garamond', serif;
@@ -128,32 +129,32 @@
                 font-size: 14pt; /* Adjust font size for better readability */
                 margin-top: 50px;
             }
-    
+        
             .contact-section h2 {
                 font-size: 1.5rem;
                 margin-bottom: 10px;
                 color: #EAE0D5;
             }
-    
+        
             .contact-section p {
                 margin: 5px 0;
                 color: #EAE0D5;
             }
-    
+        
             .contact-section a {
                 color: #EAE0D5;
                 text-decoration: none;
                 font-weight: bold;
             }
-    
+        
             .contact-section a:hover {
                 text-decoration: underline;
             }
-    
+        
             .contact-section .social-icons {
                 margin-top: 10px;
             }
-    
+        
             .contact-section .social-icons img {
                 width: 30px;
                 height: 30px;
@@ -161,7 +162,7 @@
                 cursor: pointer;
                 vertical-align: middle;
             }
-    
+        
             /* Styles for the "Our Watch" section */
             .cream.first.left.wide.animate {
                 position: relative;
@@ -173,7 +174,7 @@
                 gap: 20px;
                 flex-wrap: wrap;
             }
-    
+        
             .cream .text {
                 flex: 1;
                 max-width: 100%; /* Allow text to take full width on mobile */
@@ -181,12 +182,12 @@
                 font-family: 'Monotype Corsiva', cursive;
                 text-align: center;
             }
-    
+        
             .cream .text h3 a {
                 color: #b2beb5;
                 font-family: 'Edwardian Script ITC', cursive;
             }
-    
+        
             .cream .image {
                 display: flex;
                 flex-direction: row;
@@ -194,25 +195,25 @@
                 width: 100%; /* Allow images to take full width */
                 justify-content: center; /* Center images */
             }
-    
+        
             .cream .image img {
                 width: 100%; /* Images stack on mobile */
                 max-width: 300px; /* Set a max width for images */
                 height: auto;
                 object-fit: cover;
             }
-    
+        
             .cream .video {
                 width: 98%;
                 max-width: 98%;
             }
-    
+        
             .cream .video video {
                 width: 100%;
                 height: auto;
                 object-fit: cover;
             }
-    
+        
             /* Button styling */
             .button {
                 display: inline-block;
@@ -224,11 +225,11 @@
                 border-radius: 5px;
                 transition: background-color 0.3s;
             }
-    
+        
             .button:hover {
                 background-color: #555;
             }
-    
+        
             /* Animation for the "GOLDEN SPRUCE" text */
             @keyframes moveRight {
                 0% {
@@ -238,7 +239,7 @@
                     transform: translateX(100%);
                 }
             }
-    
+        
             .animated-text {
                 font-family: 'Cinzel', serif;
                 font-size: 2rem;
@@ -250,20 +251,20 @@
                 left: 0;
                 animation: moveRight 10s linear infinite;
             }
-    
+        
             /* Styling the section to apply requested font and colors */
             .white.second.right.narrow.animate .text h2,
             .white.second.right.narrow.animate .text h3 a {
                 color: #b2beb5;
                 font-family: 'Edwardian Script ITC', cursive;
             }
-    
+        
             .white.second.right.narrow.animate .text p,
             .white.second.right.narrow.animate .text i {
                 color: #a9a9a9;
                 font-family: 'Monotype Corsiva', cursive;
             }
-    
+        
             /* Modal styles */
             .modal {
                 display: none; /* Hidden by default */
@@ -276,7 +277,7 @@
                 overflow: auto; /* Enable scroll if needed */
                 background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
             }
-    
+        
             .modal-content {
                 background-color: #fefefe;
                 margin: 15% auto; /* 15% from the top and centered */
@@ -285,92 +286,119 @@
                 width: 80%; /* Could be more or less, depending on screen size */
                 max-width: 500px; /* Limit max width */
             }
-    
+        
             .close {
                 color: #aaa;
                 float: right;
                 font-size: 28px;
                 font-weight: bold;
             }
-    
+        
             .close:hover,
             .close:focus {
                 color: black;
                 text-decoration: none;
                 cursor: pointer;
             }
-    
+        
             /* Responsive styles */
             @media (max-width: 768px) {
+                .top-bar {
+                    justify-content: flex-start; /* Align menu to left */
+                }
+        
                 .tagline {
                     font-size: 14px; /* Smaller font size for mobile */
                 }
-    
+        
+                .splash img {
+                    width: 100%; /* Ensure full width matches top bar */
+                }
+        
                 .contact-section h2 {
                     font-size: 1.2rem; /* Adjust heading size */
                 }
-    
+        
                 .animated-text {
                     font-size: 1.5rem; /* Smaller animated text */
                 }
             }
-    
+        
             @media (max-width: 480px) {
-                .top-bar {
-                    flex-direction: column; /* Stack elements on small screens */
-                }
-    
-                .burgercontainer {
-                    margin: 10px 0; /* Add margin for spacing */
-                }
-    
                 .splash img {
-                    max-height: 60vh; /* Smaller max height for mobile */
+                    max-height: 50vh; /* Further reduce image size on very small screens */
                 }
-    
-                .cream .text h3 {
-                    font-size: 1.2rem; /* Adjust font size for watch section */
+        
+                .contact-section {
+                    font-size: 12pt; /* Adjust font size for better readability */
                 }
             }
         </style>
+        
     </head>
 <body>
 
-<div class="top-bar">
-    <div class="burgercontainer">
-        <i class="main-burger">
-            <span class="top"></span>
-            <span class="mid"></span>
-            <span class="bot"></span>
-            MENU
-        </i>
-        <div class="menu-content">
-            <ul>
-                <li><a href="index.html#featured-properties" title="A selection of Arysance projects">Featured Properties</a></li>
-                <li><a href="the watch.html" title="The five pillars of Arysance">The Watch</a></li>
-                <li><a href="#contact-us" title="Get in touch with Arysance">Enquiries</a></li>
-            </ul>
+    <div class="top-bar">
+        <div class="burgercontainer">
+            <i class="main-burger">
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="bot"></span>
+                MENU
+            </i>
+            <div class="menu-content">
+                <ul>
+                    <li><a href="index.html#featured-properties" title="A selection of Arysance projects">Featured Properties</a></li>
+                    <li><a href="the watch.html" title="The five pillars of Arysance">The Watch</a></li>
+                    <li><a href="#contact-us" title="Get in touch with Arysance">Enquiries</a></li>
+                </ul>
+            </div>
         </div>
+    
+        <!-- The creative tagline in the middle of the top bar -->
+        <div class="tagline">SINCE 1993</div>
     </div>
-
-    <!-- The creative tagline in the middle of the top bar -->
-    <div class="tagline">SINCE 1993</div>
-</div>
-
-<header>
-    <a href="the watch.html" title="Arysance" rel="home" class="logo">
-        <img src="Main arysance.jpg" alt="Arysance" class="logo-image">
-    </a>
-</header>
-
-
-
-<section class="splash animate wideImg">
-    <div class="wrapper">
-        <video class="logo" src="Project 2.mp4" alt="Arysance" autoplay loop muted></video>
-        <img src="20240824_163210.jpg" alt="background">
-    </div>
-</section>
+    
+    <style>
+        /* Add this to your existing CSS */
+        /* Ensures full-width for top bar */
+        .top-bar {
+            width: 100%;
+        }
+    
+        /* Ensures the splash image is equal to the width of the top bar */
+        .splash-image,
+        .splash-video {
+            width: 100%; /* Make the splash image and video full-width */
+            max-height: calc(100vh - 60px); /* Adjust max-height based on your design */
+            object-fit: cover; /* Ensure they cover the area */
+            margin: 0; /* Remove any margins */
+        }
+    
+        /* Make the logo image responsive */
+        .logo-image {
+            width: 100%; /* Make logo responsive */
+            max-width: 100%; /* Ensure no overflow */
+            height: auto; /* Maintain aspect ratio */
+        }
+    
+        /* Responsive styling for mobile devices */
+        @media (max-width: 768px) {
+            .top-bar {
+                justify-content: flex-start; /* Align items to the left on mobile */
+            }
+    
+            .tagline {
+                text-align: center; /* Center tagline for mobile if needed */
+            }
+    
+            .splash-video {
+                /* Ensure the video behaves similarly to the splash image */
+                height: auto; /* Maintain aspect ratio */
+            }
+        }
+    </style>
+    
 
 <section class="cream first left wide animate">
     <div class="wrapper cf">
@@ -414,20 +442,73 @@
             }
         </style>
         
-        <div class="image">
-            <a href="the watch.html#IMG_1429">
-                <img src="green best.jpg" alt="Arysance Watch" class="three-d-image main-image">
-            </a>
-            <a href="the watch.html#IMG_1429">
-                <video controls class="three-d-image">
-                    <source src="ARYSANCE - GREYTITUDE WATCH video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </a>
-            <a href="the watch.html#IMG_1429">
-                <img src="IMG_1579.jpg" alt="Arysance Watch" class="three-d-image">
-            </a>
+        <div class="top-bar">
+            <div class="burgercontainer">
+                <i class="main-burger">
+                    <span class="top"></span>
+                    <span class="mid"></span>
+                    <span class="bot"></span>
+                    MENU
+                </i>
+                <div class="menu-content">
+                    <ul>
+                        <li><a href="index.html#featured-properties" title="A selection of Arysance projects">Featured Properties</a></li>
+                        <li><a href="the watch.html" title="The five pillars of Arysance">The Watch</a></li>
+                        <li><a href="#contact-us" title="Get in touch with Arysance">Enquiries</a></li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- The creative tagline in the middle of the top bar -->
+            <div class="tagline">SINCE 1993</div>
         </div>
+        
+        <header>
+            <a href="the watch.html" title="Arysance" rel="home" class="logo">
+                <img src="Main arysance.jpg" alt="Arysance" class="logo-image">
+            </a>
+        </header>
+        
+        <section class="splash animate wideImg">
+            <div class="wrapper">
+                <video class="logo" src="Project 2.mp4" alt="Arysance" autoplay loop muted></video>
+                <img src="20240824_163210.jpg" alt="background" class="splash-image"> <!-- Add class for better control -->
+            </div>
+        </section>
+        <style>
+            /* Add this to your existing CSS */
+            /* Ensures full-width for top bar */
+            .top-bar {
+                width: 100%;
+            }
+        
+            /* Ensures the splash image is equal to the width of the top bar */
+            .splash-image {
+                width: 100%; /* Make the splash image full-width */
+                max-height: calc(100vh - 60px); /* Adjust max-height based on your design */
+                object-fit: cover; /* Ensure the image covers the area */
+                margin: 0; /* Remove any margins */
+            }
+        
+            /* Responsive styling for mobile devices */
+            @media (max-width: 768px) {
+                .top-bar {
+                    justify-content: flex-start; /* Align items to the left on mobile */
+                }
+        
+                .tagline {
+                    text-align: center; /* Center tagline for mobile if needed */
+                }
+        
+                /* Make sure the logo image is also responsive */
+                .logo-image {
+                    width: 100%; /* Make logo responsive */
+                    max-width: 100%; /* Ensure no overflow */
+                    height: auto; /* Maintain aspect ratio */
+                }
+            }
+        </style>
+                
         
         
         
