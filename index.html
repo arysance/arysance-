@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arysance Watches - Craftsmanship Redefined">
+    <meta name="description" content="Arysance Watches - wear the legacy">
     <title>The Watch | Arysance</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Josefin+Sans:400,600,700|Playfair+Display:400,700|Inter:400,500,700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -11,8 +11,8 @@
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
     <style>
         :root {
-            --primary-color: #C0C0C0; /* Silver color */
-            --secondary-color: #808080; /* Darker silver */
+            --primary-color: #000000; /* Bright silver color */
+            --secondary-color: #000000; /* Darker bright silver */
             --background-dark: #1A1A1A;
             --background-light: #2D2D2D;
             --text-light: #FFFFFF;
@@ -121,7 +121,7 @@
             font-family: 'Cinzel', serif;
             font-size: 6rem;
             color: var(--primary-color);
-            text-shadow: 0 0 20px rgba(192, 192, 192, 0.7);
+            text-shadow: 0 0 20px rgba(224, 224, 224, 0.7);
             animation: shimmer 3s infinite, glow 2s infinite alternate;
         }
 
@@ -132,8 +132,8 @@
         }
 
         @keyframes glow {
-            0% { text-shadow: 0 0 20px rgba(192, 192, 192, 0.7); }
-            100% { text-shadow: 0 0 40px rgba(192, 192, 192, 1); }
+            0% { text-shadow: 0 0 20px rgba(224, 224, 224, 0.7); }
+            100% { text-shadow: 0 0 40px rgba(224, 224, 224, 1); }
         }
 
         /* Brand Story Section */
@@ -389,8 +389,9 @@
 
 <!-- Full-page Video Background -->
 <div class="video-background">
-    <video autoplay loop muted>
-        <source src="silver watch video.mp4" type="video/mp4">
+    <video autoplay loop muted playsinline>
+        <source src="snow (2).mp4" type="video/mp4" media="(min-width: 769px)">
+        <source src="snow.mp4" type="video/mp4" media="(max-width: 768px)">
         Your browser does not support the video tag.
     </video>
 </div>
@@ -399,6 +400,11 @@
     <a href="index.html" class="logo">
         <img src="Main arysance.jpg" alt="Arysance">
     </a>
+    
+    <!-- Add ARYSANCE Text Here -->
+    <div class="brand-name">
+        ARYSANCE
+    </div>
     
     <nav class="menu">
         <a href="#contact">Contact</a>
