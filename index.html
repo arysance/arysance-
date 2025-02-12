@@ -64,8 +64,8 @@
         }
 
         .video-background video {
-            min-width: 100%;
-            min-height: 100%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
 
@@ -142,7 +142,7 @@
 
         /* Brand Story Section */
         .story-section {
-            padding: 40px 20px; /* Reduced padding to reduce space */
+            padding: 20px 20px; /* Reduced padding to reduce space */
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
@@ -360,8 +360,16 @@
         }
 
         @media (max-width: 480px) {
+            .splash {
+                margin-top: -30px; /* Further reduce space for mobile */
+            }
+
             .splash h1 {
                 font-size: 3rem;
+            }
+
+            .story-section {
+                padding: 10px 20px; /* Further reduce padding for mobile */
             }
 
             .story-section h2 {
