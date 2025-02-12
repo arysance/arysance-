@@ -116,17 +116,34 @@
             align-items: center;
             overflow: hidden;
             margin-top: -50px; /* Reduce space between header and ARYSANCE */
+            background: url('tiger.jpg') no-repeat center center; /* Center the image */
+            background-size: 60%; /* Reduce the size of the image to 60% of the container */
+        }
+        
+        /* For tablet devices */
+        @media (max-width: 768px) {
+            .splash {
+                background-size: 70%; /* Slightly larger size for tablets */
+            }
+        }
+        
+        /* For mobile devices */
+        @media (max-width: 480px) {
+            .splash {
+                background-size: 80%; /* Even larger size for smaller screens */
+            }
         }
 
         .splash h1 {
-            font-family: 'Cinzel', serif;
+            font-family: 'Dream Avenue', cursive;
             font-size: 6rem;
-            color: var(--primary-color);
-            text-shadow: 0 0 20px rgba(224, 224, 224, 0.7);
+            color: white;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3);
             animation: shimmer 3s infinite, glow 2s infinite alternate;
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-            line-height: 1; /* Adjust line height to reduce space */
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            transform: perspective(500px) rotateX(10deg) rotateY(10deg);
         }
 
         @keyframes shimmer {
@@ -136,8 +153,8 @@
         }
 
         @keyframes glow {
-            0% { text-shadow: 0 0 20px rgba(224, 224, 224, 0.7); }
-            100% { text-shadow: 0 0 40px rgba(224, 224, 224, 1); }
+            0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3); }
+            100% { text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 80px rgba(255, 255, 255, 0.5); }
         }
 
         /* Brand Story Section */
