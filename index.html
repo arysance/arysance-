@@ -110,32 +110,18 @@
         /* Splash Section */
         .splash {
             position: relative;
-            height: 100vh;
+            height: 80vh; /* Reduced height to reduce space from top bar */
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            margin-top: -50px; /* Reduce space between header and ARYSANCE */
-            background: url('tiger.jpg') no-repeat center center; /* Center the image */
-            background-size: 60%; /* Reduce the size of the image to 60% of the container */
-        }
-        
-        /* For tablet devices */
-        @media (max-width: 768px) {
-            .splash {
-                background-size: 70%; /* Slightly larger size for tablets */
-            }
-        }
-        
-        /* For mobile devices */
-        @media (max-width: 480px) {
-            .splash {
-                background-size: 80%; /* Even larger size for smaller screens */
-            }
+            margin-top: -40px; /* Reduce space between header and ARYSANCE */
+            background: url('tiger.jpg') no-repeat center center/cover;
+            margin-bottom: -80px; /* Reduce space below the splash section */
         }
 
         .splash h1 {
-            font-family: 'Dream Avenue', cursive;
+            font-family: 'Cinzel', serif; /* Default font for desktop */
             font-size: 6rem;
             color: white;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3);
@@ -161,7 +147,7 @@
         .story-section {
             padding: 20px 20px; /* Reduced padding to reduce space */
             max-width: 800px;
-            margin: 0 auto;
+            margin: -80px auto 0; /* Negative margin to pull the section up */
             text-align: center;
             position: relative;
             z-index: 1;
@@ -328,16 +314,26 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .splash {
+                height: 60vh; /* Adjust height for tablets */
+                margin-top: -30px; /* Adjust margin for tablets */
+                margin-bottom: -60px; /* Adjust margin for tablets */
+            }
+
             .splash h1 {
-                font-size: 4rem;
+                font-size: 4rem; /* Adjust font size for tablets */
+            }
+
+            .story-section {
+                margin: -60px auto 0; /* Adjust margin for tablets */
             }
 
             .story-section h2 {
-                font-size: 2rem;
+                font-size: 2rem; /* Adjust font size for tablets */
             }
 
             .story-section p {
-                font-size: 1rem;
+                font-size: 1rem; /* Adjust font size for tablets */
             }
 
             .header .menu {
@@ -378,23 +374,25 @@
 
         @media (max-width: 480px) {
             .splash {
-                margin-top: -30px; /* Further reduce space for mobile */
+                height: 50vh; /* Further adjust height for mobile */
+                margin-top: -20px; /* Further adjust margin for mobile */
+                margin-bottom: -40px; /* Further adjust margin for mobile */
             }
 
             .splash h1 {
-                font-size: 3rem;
+                font-size: 3rem; /* Further adjust font size for mobile */
             }
 
             .story-section {
-                padding: 10px 20px; /* Further reduce padding for mobile */
+                margin: -40px auto 0; /* Further adjust margin for mobile */
             }
 
             .story-section h2 {
-                font-size: 1.8rem;
+                font-size: 1.8rem; /* Further adjust font size for mobile */
             }
 
             .story-section p {
-                font-size: 0.9rem;
+                font-size: 0.9rem; /* Further adjust font size for mobile */
             }
 
             .watch-item h3 {
@@ -489,6 +487,7 @@
         <i class="fab fa-twitter social-icon"></i>
     </a>
 </section>
+
 
 <!-- Script for Smooth Scrolling -->
 <script>
