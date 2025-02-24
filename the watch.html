@@ -5,141 +5,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Arysance - Explore our exquisite watch collection">
     <title>Watch Collection | Arysance</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Monotype+Corsiva|Playfair+Display:400,700|Dream+Avenue|Garamond&display=swap">
-    <link rel="stylesheet" href="wp-content/themes/Arysance/style.css" type="text/css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Playfair+Display:400,700|Inter:400,500,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
     
     <style>
+        :root {
+            --primary-color: #556B8E;
+            --secondary-color: #43506D;
+            --background-dark: #1A1A1A;
+            --background-light: #2D2D2D;
+            --text-light: #FFFFFF;
+            --text-dark: #333333;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         body {
             margin: 0;
-            font-family: 'Josefin Sans', sans-serif;
-            background-image: url('IMG_1579(1)(1).png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #fff;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Particle Background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
 
         .header {
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 10px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .header .logo {
-            display: block;
-            height: 50px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .header .logo img {
-            height: 100%;
+            height: 50px;
+            filter: brightness(0) invert(1);
         }
 
         .header .menu {
             display: flex;
+            gap: 20px;
         }
 
         .header .menu a {
             text-decoration: none;
-            color: #333;
-            padding: 0 15px;
-            line-height: 50px;
+            color: var(--text-light);
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .header .menu a:hover {
-            background-color: #f7f7f7;
+            background-color: var(--glass-bg);
+            transform: translateY(-3px);
         }
 
         .watch-section {
-            padding: 20px;
-            background-color: rgba(249, 249, 249, 0.9);
-            border-radius: 8px;
-            margin: 20px auto;
+            padding: 80px 20px;
             max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
-        .watch-section .watch-item {
-            margin: 40px 0;
+        .watch-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 80px 0;
             text-align: center;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .watch-section .watch-item img {
+        .watch-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
-            max-width: 600px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .watch-item:hover::before {
+            left: 100%;
+        }
+
+        .watch-item:hover {
+            transform: scale(1.05) rotateY(10deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .watch-item img {
+            width: 100%;
+            max-width: 400px;
             height: auto;
-            display: block;
+            border-radius: 8px;
             margin: 0 auto;
             cursor: pointer;
+            transition: transform 0.5s ease;
         }
 
-        .watch-section .watch-item h3 {
+        .watch-item img:hover {
+            transform: scale(1.1) rotateZ(5deg);
+        }
+
+        .watch-item h3 {
             font-family: 'Playfair Display', serif;
-            color: #333;
-            font-weight: 700;
+            color: var(--text-light);
+            font-size: 2.5em;
             margin-top: 20px;
+            animation: float 3s ease-in-out infinite;
         }
 
-        .watch-section .watch-item p {
-            color: #666;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .watch-item p {
+            color: rgba(255, 255, 255, 0.8);
             margin: 10px 0;
             font-size: 16px;
         }
 
-        .watch-section .watch-item .price {
+        .watch-item .price {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5em;
-            color: #333;
+            font-size: 1.8em;
+            color: var(--text-light);
             margin: 10px 0;
         }
 
-        .watch-section .watch-item .classic-font {
-            font-family: 'Garamond', serif;
-            font-size: 14px;
-            color: #333;
-        }
-
-        .watch-section .watch-item .button {
+        .watch-item .button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #556B8E;
-            color: #fff;
+            background-color: var(--primary-color);
+            color: var(--text-light);
             text-decoration: none;
             border-radius: 5px;
-            font-family: 'Josefin Sans', sans-serif;
             font-weight: bold;
             margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .watch-section .watch-item .button:hover {
-            background-color: #43506D;
+        .watch-item .button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
         }
 
         .animated-text {
-            font-family: 'Dream Avenue', cursive;
-            font-size: 2em;
-            color: #556B8E;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5em;
+            color: var(--primary-color);
             white-space: nowrap;
             overflow: hidden;
-            box-sizing: border-box;
             position: relative;
             animation: slide 10s linear infinite;
             padding: 20px 0;
         }
 
         @keyframes slide {
-            0% {
-                transform: translateX(100%);
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* 3D Parallax Effect */
+        .parallax {
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .parallax img {
+            transform: translateZ(-100px) scale(2);
+            transition: transform 0.5s ease;
+        }
+
+        .parallax:hover img {
+            transform: translateZ(0) scale(1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header .menu {
+                gap: 10px;
             }
-            100% {
-                transform: translateX(-100%);
+
+            .watch-item {
+                padding: 15px;
+            }
+
+            .watch-item h3 {
+                font-size: 1.8em;
+            }
+
+            .animated-text {
+                font-size: 1.2em;
             }
         }
     </style>
 </head>
 <body>
+
+<!-- Particle Background -->
+<div id="particles-js"></div>
 
 <header class="header">
     <a href="index.html" class="logo">
@@ -154,7 +244,7 @@
 </header>
 
 <section class="watch-section">
-    <div class="watch-item">
+    <div class="watch-item parallax">
         <img src="silver 2.jpg" alt="Watch 1" id="watch1">
         <h3>GRATITUDE WATCH</h3>
         <p>This classic watch features a timeless design with a polished steel case and sleek chain strap. Perfect for any occasion, it combines elegance with functionality.</p>
@@ -166,7 +256,7 @@
         <div class="animated-text">ARYSANCE</div>
     </div>
     
-    <div class="watch-item">
+    <div class="watch-item parallax">
         <img src="green download 9.jpg" alt="Watch 2" id="watch2">
         <h3>GOLDEN SPRUCE</h3>
         <p>Embrace modern luxury with this sleek watch featuring a golden ring and a high-tech quartz movement. Its contemporary design is both stylish and practical.</p>
@@ -176,7 +266,13 @@
     </div>
 </section>
 
+<!-- Particle.js Script -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
+    particlesJS.load('particles-js', 'particles.json', function() {
+        console.log('Particles.js loaded!');
+    });
+
     function setupImageClick(imageId, images) {
         const img = document.getElementById(imageId);
         let currentIndex = 0;

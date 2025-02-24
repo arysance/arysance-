@@ -6,6 +6,7 @@
     <meta name="description" content="Arysance Watches - wear the legacy">
     <title>The Watch | Arysance</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Josefin+Sans:400,600,700|Playfair+Display:400,700|Inter:400,500,700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Dream+Avenue&display=swap" rel="stylesheet"> <!-- Dream Avenue Font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
@@ -107,76 +108,48 @@
             transform: translateY(-3px);
         }
 
+        /* Dynamic ARYSANCE Text */
+        .dynamic-text {
+            position: fixed;
+            top: 50vh; /* Center vertically on the page */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%);
+            font-family: 'Dream Avenue', cursive;
+            font-size: 8rem; /* Larger font size to cover the image */
+            color: var(--text-light);
+            z-index: 100;
+            transition: all 0.5s ease;
+            text-align: center;
+            width: 100%;
+            animation: glow 2s infinite alternate;
+        }
+
+        .dynamic-text.scrolled {
+            top: 20px; /* Move to the top bar */
+            font-size: 2rem; /* Smaller font size for the header */
+            width: auto; /* Reset width */
+        }
+
         /* Splash Section */
         .splash {
             position: relative;
-            height: 80vh; /* Reduced height to reduce space from top bar */
+            height: 80vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            margin-top: -40px; /* Reduce space between header and ARYSANCE */
-            background: url('tiger.jpg') no-repeat center center/cover;
-            margin-bottom: -80px; /* Reduce space below the splash section */
+            margin-top: -40px;
+            margin-bottom: -80px;
         }
 
-        .splash h1 {
-            font-family: 'Cinzel', serif; /* Default font for desktop */
-            font-size: 6rem;
-            color: white;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3);
-            animation: shimmer 3s infinite, glow 2s infinite alternate;
-            margin: 0;
-            padding: 0;
-            line-height: 1;
-            transform: perspective(500px) rotateX(10deg) rotateY(10deg);
-        }
-
-        @keyframes shimmer {
-            0% { opacity: 0.8; }
-            50% { opacity: 1; }
-            100% { opacity: 0.8; }
-        }
-
-        @keyframes glow {
-            0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3); }
-            100% { text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 80px rgba(255, 255, 255, 0.5); }
-        }
-
-        /* Brand Story Section */
-        .story-section {
-            padding: 20px 20px; /* Reduced padding to reduce space */
-            max-width: 800px;
-            margin: -80px auto 0; /* Negative margin to pull the section up */
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .story-section h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .story-section p {
-            font-family: 'Josefin Sans', sans-serif;
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-            animation: slideIn 3s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+        .splash video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
 
         /* Watch Section */
@@ -259,91 +232,42 @@
             transform: translateY(-3px);
         }
 
-        /* Contact Section */
-        .contact-section {
-            padding: 80px 20px;
-            text-align: center;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            margin: 80px auto;
-            max-width: 800px;
-            position: relative;
-            overflow: hidden;
-            transform-style: preserve-3d;
-            perspective: 1000px;
+        /* Particle Background */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
 
-        .contact-section h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
+        /* Keyframes for Animations */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
 
-        .contact-section p {
-            font-family: 'Josefin Sans', sans-serif;
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin: 10px 0;
-        }
-
-        .contact-section a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .contact-section a:hover {
-            color: var(--secondary-color);
-        }
-
-        .contact-section .social-icon {
-            font-size: 2rem;
-            margin: 0 10px;
-            color: var(--text-light);
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .contact-section .social-icon:hover {
-            transform: scale(1.2) rotate(360deg);
-            color: var(--primary-color);
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3); }
+            100% { text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 80px rgba(255, 255, 255, 0.5); }
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .dynamic-text {
+                font-size: 6rem; /* Adjust for tablets */
+            }
+
+            .dynamic-text.scrolled {
+                font-size: 1.5rem; /* Adjust for tablets */
+            }
+
             .splash {
-                height: 60vh; /* Adjust height for tablets */
-                margin-top: -30px; /* Adjust margin for tablets */
-                margin-bottom: -60px; /* Adjust margin for tablets */
-            }
-
-            .splash h1 {
-                font-size: 4rem; /* Adjust font size for tablets */
-            }
-
-            .story-section {
-                margin: -60px auto 0; /* Adjust margin for tablets */
-            }
-
-            .story-section h2 {
-                font-size: 2rem; /* Adjust font size for tablets */
-            }
-
-            .story-section p {
-                font-size: 1rem; /* Adjust font size for tablets */
-            }
-
-            .header .menu {
-                flex-direction: column;
-                gap: 10px;
-                align-items: center;
-            }
-
-            .header .menu a {
-                padding: 8px 12px;
+                height: 60vh;
+                margin-top: -30px;
+                margin-bottom: -60px;
             }
 
             .watch-item {
@@ -358,41 +282,21 @@
             .watch-item img {
                 max-width: 100%;
             }
-
-            .contact-section h2 {
-                font-size: 2rem;
-            }
-
-            .contact-section p {
-                font-size: 1rem;
-            }
-
-            .contact-section .social-icon {
-                font-size: 1.5rem;
-            }
         }
 
         @media (max-width: 480px) {
+            .dynamic-text {
+                font-size: 4rem; /* Adjust for mobile */
+            }
+
+            .dynamic-text.scrolled {
+                font-size: 1.2rem; /* Adjust for mobile */
+            }
+
             .splash {
-                height: 50vh; /* Further adjust height for mobile */
-                margin-top: -20px; /* Further adjust margin for mobile */
-                margin-bottom: -40px; /* Further adjust margin for mobile */
-            }
-
-            .splash h1 {
-                font-size: 3rem; /* Further adjust font size for mobile */
-            }
-
-            .story-section {
-                margin: -40px auto 0; /* Further adjust margin for mobile */
-            }
-
-            .story-section h2 {
-                font-size: 1.8rem; /* Further adjust font size for mobile */
-            }
-
-            .story-section p {
-                font-size: 0.9rem; /* Further adjust font size for mobile */
+                height: 50vh;
+                margin-top: -20px;
+                margin-bottom: -40px;
             }
 
             .watch-item h3 {
@@ -401,10 +305,6 @@
 
             .watch-item .price {
                 font-size: 1.5em;
-            }
-
-            .contact-section h2 {
-                font-size: 1.8rem;
             }
         }
     </style>
@@ -423,36 +323,30 @@
     </video>
 </div>
 
+<!-- Particle Background -->
+<div id="particles-js"></div>
+
 <header class="header">
     <a href="index.html" class="logo">
         <img src="Main arysance.jpg" alt="Arysance">
     </a>
     
-    <!-- Add ARYSANCE Text Here -->
-    <div class="brand-name">
-        ARYSANCE
-    </div>
+    <!-- Dynamic ARYSANCE Text -->
+    <div class="dynamic-text" id="dynamicText">ARYSANCE</div>
     
     <nav class="menu">
-        <a href="#contact">Contact</a>
-        <a href="#watch-section">The Watch</a>
+        <a href="index.html">Home</a> <!-- Added Home Option -->
+        <a href="our-story.html">Our Story</a>
+        <a href="contact.html">Contact</a>
     </nav>
 </header>
 
+<!-- Splash Section with vn.mp4 -->
 <section class="splash">
-    <h1 class="animate__animated animate__fadeIn">ARYSANCE</h1>
-</section>
-
-<!-- Brand Story Section -->
-<section class="story-section">
-    <h2>Our Story</h2>
-    <p>
-        It all started on a sunny afternoon in Delhi. My friend and I decided to visit DLF Emporio, one of the most luxurious malls in the city, to check out a particular watch brand. Little did we know, this trip would change our lives forever. My friend was wearing sandals, and the moment we stepped in, the secretary started judging us. He gave us looks that screamed, "You don’t belong here." Despite our excitement, we were subtly pushed to leave.
-        <br><br>
-        That day, we realized something profound: respect isn’t given; it’s earned. And sometimes, it starts with what you wear. We left the mall with a burning desire to create something extraordinary—a brand that would redefine elegance and respect. That’s how <strong>ARYSANCE</strong> was born. A brand that doesn’t just tell time but tells the world who you are.
-        <br><br>
-        Today, every ARYSANCE watch is a symbol of resilience, elegance, and the belief that you deserve to be respected, no matter where you go.
-    </p>
+    <video autoplay loop muted playsinline>
+        <source src="vn.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </section>
 
 <!-- Watch Section -->
@@ -474,38 +368,16 @@
     </div>
 </section>
 
-<!-- Contact Section -->
-<section class="contact-section" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:arysance@gmail.com">arysance@gmail.com</a></p>
-    <p>Phone: <a href="tel:9354423383">9354423383</a></p>
-    <p>Follow us:</p>
-    <a href="https://www.instagram.com/arysance" target="_blank">
-        <i class="fab fa-instagram social-icon"></i>
-    </a>
-    <a href="https://www.twitter.com/arysance" target="_blank">
-        <i class="fab fa-twitter social-icon"></i>
-    </a>
-</section>
-
-
-<!-- Script for Smooth Scrolling -->
+<!-- Script for Smooth Scrolling and Dynamic Text -->
 <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-</script>
-
-<!-- Particle.js Script -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-    particlesJS.load('particles-js', 'particles.json', function() {
-        console.log('Particles.js loaded!');
+    // Dynamic ARYSANCE Text Animation
+    const dynamicText = document.getElementById('dynamicText');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            dynamicText.classList.add('scrolled');
+        } else {
+            dynamicText.classList.remove('scrolled');
+        }
     });
 
     // Custom Cursor
@@ -522,6 +394,14 @@
         element.addEventListener('mouseleave', () => {
             cursor.classList.remove('hover');
         });
+    });
+</script>
+
+<!-- Particle.js Script -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', 'particles.json', function() {
+        console.log('Particles.js loaded!');
     });
 </script>
 
