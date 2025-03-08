@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arysance Watches - Contact Us">
+    <title>Contact | Arysance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Josefin+Sans:400,600,700|Playfair+Display:400,700|Inter:400,500,700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Dream+Avenue&display=swap" rel="stylesheet"> <!-- Dream Avenue Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <style>
+        :root {
+            --primary-color: #000000; /* Bright silver color */
+            --secondary-color: #000000; /* Darker bright silver */
+            --background-dark: #1A1A1A;
+            --background-light: #2D2D2D;
+            --text-light: #FFFFFF;
+            --text-dark: #333333;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+            z-index: 10000;
+        }
+
+        .cursor.hover {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            opacity: 0.5;
+        }
+
+        /* Full-page Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Header */
+        .header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .logo img {
+            height: 50px;
+            filter: brightness(0) invert(1);
+        }
+
+        .header .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header .menu a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .header .menu a:hover {
+            background-color: var(--glass-bg);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-section h1 {
+            font-family: 'Dream Avenue', cursive;
+            font-size: 4rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 40px;
+            width: 250px;
+            text-align: center;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .contact-card:hover {
+            transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-card:hover i {
+            transform: scale(1.2) rotate(360deg);
+            color: var(--text-light);
+        }
+
+        .contact-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        .contact-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--text-light);
+        }
+
+        /* Keyframes for Animations */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-section h1 {
+                font-size: 3rem;
+            }
+
+            .contact-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-card {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-section h1 {
+                font-size: 2rem;
+            }
+
+            .contact-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+
+<!-- Full-page Video Background -->
+<div class="video-background">
+    <video autoplay loop muted playsinline>
+        <source src="snow (2).mp4" type="video/mp4" media="(min-width: 769px)">
+        <source src="snow.mp4" type="video/mp4" media="(max-width: 768px)">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<header class="header">
+    <a href="index.html" class="logo">
+        <img src="Main arysance.jpg" alt="Arysance">
+    </a>
+    
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="our-story.html">Our Story</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <h1 class="animate__animated animate__fadeIn">Contact Us</h1>
+    
+    <div class="contact-cards">
+        <!-- Email Card -->
+        <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p><a href="mailto:arysance@gmail.com">arysance@gmail.com</a></p>
+        </div>
+
+        <!-- Twitter Card -->
+        <div class="contact-card">
+            <i class="fab fa-twitter"></i>
+            <h3>Twitter</h3>
+            <p><a href="https://twitter.com/arysance" target="_blank">@arysance</a></p>
+        </div>
+
+        <!-- Instagram Card -->
+        <div class="contact-card">
+            <i class="fab fa-instagram"></i>
+            <h3>Instagram</h3>
+            <p><a href="https://instagram.com/arysance" target="_blank">@arysance</a></p>
+        </div>
+
+        <!-- Phone Card -->
+        <div class="contact-card">
+            <i class="fas fa-phone"></i>
+            <h3>Phone</h3>
+            <p><a href="tel:9354423383">9354423383</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- Script for Smooth Scrolling and Dynamic Text -->
+<script>
+    // Custom Cursor
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.pageX + 'px';
+        cursor.style.top = e.pageY + 'px';
+    });
+
+    document.querySelectorAll('a, button, img').forEach((element) => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+        });
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+        });
+    });
+</script>
+
+</body>
+</html>

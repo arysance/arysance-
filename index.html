@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arysance Watches - wear the legacy">
-    <title>The Watch | Arysance</title>
+    <meta name="description" content="Discover the top watch trends of 2023 at Arysance. Find stylish, affordable watches for men and women. Shop now for the perfect timepiece!">
+    <title>Top Watch Trends 2023: Stylish & Affordable Watches | Arysance</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Josefin+Sans:400,600,700|Playfair+Display:400,700|Inter:400,500,700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Dream+Avenue&display=swap" rel="stylesheet"> <!-- Dream Avenue Font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -114,7 +114,7 @@
             top: 50vh; /* Center vertically on the page */
             left: 50%; /* Center horizontally */
             transform: translate(-50%, -50%);
-            font-family: 'Dream Avenue', cursive;
+            font-family: 'Dream Avenue', cursive; /* Apply Dream Avenue font */
             font-size: 8rem; /* Larger font size to cover the image */
             color: var(--text-light);
             z-index: 100;
@@ -232,6 +232,62 @@
             transform: translateY(-3px);
         }
 
+        /* Blog Section */
+        .blog-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .blog-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 40px 0;
+            text-align: left;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .blog-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-item h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .blog-item p {
+            font-family: 'Josefin Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .blog-item .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .blog-item .button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
         /* Particle Background */
         #particles-js {
             position: fixed;
@@ -256,55 +312,96 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            /* Adjust the font of "ARYSANCE" for phones */
             .dynamic-text {
-                font-size: 6rem; /* Adjust for tablets */
+                font-size: 3rem; /* Adjust font size for phones */
+                top: 10px; /* Move it closer to the top */
+                left: 50%;
+                transform: translateX(-50%);
+                width: auto; /* Ensure it doesn't overflow */
             }
 
-            .dynamic-text.scrolled {
-                font-size: 1.5rem; /* Adjust for tablets */
+            /* Arrange menu options in one line, just below "ARYSANCE" */
+            .header {
+                flex-direction: column; /* Stack logo and menu vertically */
+                align-items: center;
+                padding: 10px;
             }
 
+            .header .menu {
+                margin-top: 10px; /* Add space between "ARYSANCE" and menu */
+                display: flex;
+                gap: 10px; /* Reduce gap between menu items */
+                flex-wrap: wrap; /* Allow wrapping if needed */
+                justify-content: center;
+            }
+
+            .header .menu a {
+                font-size: 14px; /* Adjust font size for phones */
+                padding: 8px 12px; /* Adjust padding for smaller screens */
+            }
+
+            /* Adjust splash section for phones */
             .splash {
-                height: 60vh;
-                margin-top: -30px;
-                margin-bottom: -60px;
-            }
-
-            .watch-item {
-                margin: 40px 0;
-                padding: 15px;
-            }
-
-            .watch-item h3 {
-                font-size: 1.8em;
-            }
-
-            .watch-item img {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .dynamic-text {
-                font-size: 4rem; /* Adjust for mobile */
-            }
-
-            .dynamic-text.scrolled {
-                font-size: 1.2rem; /* Adjust for mobile */
-            }
-
-            .splash {
-                height: 50vh;
+                height: 50vh; /* Reduce height for phones */
                 margin-top: -20px;
                 margin-bottom: -40px;
             }
 
+            /* Adjust watch section for phones */
+            .watch-item {
+                margin: 20px 0; /* Reduce margin for phones */
+                padding: 10px; /* Reduce padding for phones */
+            }
+
             .watch-item h3 {
-                font-size: 1.5em;
+                font-size: 1.5em; /* Adjust heading size for phones */
             }
 
             .watch-item .price {
-                font-size: 1.5em;
+                font-size: 1.2em; /* Adjust price size for phones */
+            }
+
+            /* Adjust blog section for phones */
+            .blog-item {
+                margin: 20px 0; /* Reduce margin for phones */
+                padding: 15px; /* Reduce padding for phones */
+            }
+
+            .blog-item h3 {
+                font-size: 1.5em; /* Adjust heading size for phones */
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Further adjustments for smaller phones */
+            .dynamic-text {
+                font-size: 2.5rem; /* Further reduce font size */
+            }
+
+            .header .menu {
+                gap: 8px; /* Further reduce gap between menu items */
+            }
+
+            .header .menu a {
+                font-size: 12px; /* Further reduce font size */
+                padding: 6px 10px; /* Further reduce padding */
+            }
+
+            .splash {
+                height: 40vh; /* Further reduce height for smaller phones */
+            }
+
+            .watch-item h3 {
+                font-size: 1.2em; /* Further reduce heading size */
+            }
+
+            .watch-item .price {
+                font-size: 1em; /* Further reduce price size */
+            }
+
+            .blog-item h3 {
+                font-size: 1.2em; /* Further reduce heading size */
             }
         }
     </style>
@@ -352,19 +449,34 @@
 <!-- Watch Section -->
 <section class="watch-section" id="watch-section">
     <div class="watch-item" id="gratitude-watch">
-        <img src="silver 2.jpg" alt="Watch 1">
+        <img src="silver 2.jpg" alt="Sleek Silver Watch for Men and Women">
         <h3>GRATITUDE WATCH</h3>
-        <p>This classic watch features a timeless design with a polished steel case and sleek chain strap. Perfect for any occasion, it combines elegance with functionality.</p>
+        <p>This classic watch features a timeless design with a polished steel case and sleek chain strap. Perfect for any occasion, it combines elegance with functionality. Whether you're dressing up for a formal event or keeping it casual, the Gratitude Watch adds a touch of sophistication to your look.</p>
         <div class="price">₹1821</div>
         <a href="buy.html" class="button">Buy Now</a>
     </div>
     
     <div class="watch-item" id="golden-spruce">
-        <img src="green download 9.jpg" alt="Watch 2">
+        <img src="green download 9.jpg" alt="Golden Luxury Watch for Women">
         <h3>GOLDEN SPRUCE</h3>
-        <p>Embrace modern luxury with this sleek watch featuring a golden ring and a high-tech quartz movement. Its contemporary design is both stylish and practical.</p>
+        <p>Embrace modern luxury with this sleek watch featuring a golden ring and a high-tech quartz movement. Its contemporary design is both stylish and practical, making it the perfect accessory for those who value elegance and functionality. The Golden Spruce watch is designed to stand out, whether you're at work or out for a night on the town.</p>
         <div class="price">₹1704</div>
         <a href="buy.html" class="button">Buy Now</a>
+    </div>
+</section>
+
+<!-- Blog Section -->
+<section class="blog-section">
+    <div class="blog-item">
+        <h3>Top 5 Watch Trends for 2023</h3>
+        <p>Discover the latest watch trends for 2023, from minimalist designs to luxury timepieces. Stay ahead of the fashion curve with our expert picks.</p>
+        <a href="blog-watch-trends.html" class="button">Read More</a>
+    </div>
+    
+    <div class="blog-item">
+        <h3>How to Style Watches with Any Outfit</h3>
+        <p>Learn how to pair your watch with any outfit, from casual to formal. Our styling tips will help you make a statement with your timepiece.</p>
+        <a href="blog-styling-tips.html" class="button">Read More</a>
     </div>
 </section>
 
@@ -407,3 +519,4 @@
 
 </body>
 </html>
+
