@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arysance - Explore our exquisite watch collection">
-    <title>Watch Collection | Arysance</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Playfair+Display:400,700|Inter:400,500,700&display=swap">
+    <meta name="description" content="Discover the top watch trends of 2025 at Arysance. Shop stylish, affordable watches for men and women. Perfect timepieces for every occasion.">
+    <meta name="keywords" content="watches 2025, stylish watches, affordable watches, luxury watches, Arysance watches">
+    <meta name="author" content="Arysance">
+    <meta property="og:title" content="Top Watch Trends 2025: Stylish & Affordable Watches | Arysance">
+    <meta property="og:description" content="Discover the top watch trends of 2025 at Arysance. Shop stylish, affordable watches for men and women.">
+    <meta property="og:image" content="https://www.arysance.com/images/social-preview.jpg">
+    <meta property="og:url" content="https://www.arysance.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Top Watch Trends 2025: Stylish & Affordable Watches | Arysance">
+    <meta name="twitter:description" content="Discover the top watch trends of 2025 at Arysance. Shop stylish, affordable watches for men and women.">
+    <meta name="twitter:image" content="https://www.arysance.com/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.arysance.com">
+    <title>Top Watch Trends 2025: Stylish & Affordable Watches | Arysance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Playfair+Display:400,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
-    
     <style>
         :root {
-            --primary-color: #556B8E;
-            --secondary-color: #43506D;
+            --primary-color: #000000; /* Bright silver color */
+            --secondary-color: #000000; /* Darker bright silver */
             --background-dark: #1A1A1A;
             --background-light: #2D2D2D;
             --text-light: #FFFFFF;
@@ -24,21 +35,52 @@
 
         body {
             margin: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Cinzel', serif;
             background-color: var(--background-dark);
             color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
+            cursor: none;
         }
 
-        /* Particle Background */
-        #particles-js {
+        /* Custom Cursor */
+        .cursor {
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
             position: absolute;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+            z-index: 10000;
+        }
+
+        .cursor.hover {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            opacity: 0.5;
+        }
+
+        /* Full-page Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
+            overflow: hidden;
         }
 
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Header */
         .header {
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
@@ -50,11 +92,6 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-        }
-
-        .header .logo img {
-            height: 50px;
-            filter: brightness(0) invert(1);
         }
 
         .header .menu {
@@ -76,6 +113,54 @@
             transform: translateY(-3px);
         }
 
+        /* Dynamic ARYSANCE Text */
+        .dynamic-text {
+            position: fixed;
+            top: 50vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: var(--text-light);
+            z-index: 100;
+            transition: all 0.5s ease;
+            text-align: center;
+            width: 100%;
+            animation: glow 2s infinite alternate;
+        }
+
+        .dynamic-text.scrolled {
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            width: auto;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Splash Section */
+        .splash {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-top: -40px;
+            margin-bottom: -80px;
+        }
+
+        .splash video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Watch Section */
         .watch-section {
             padding: 80px 20px;
             max-width: 1200px;
@@ -95,21 +180,6 @@
             transition: transform 0.5s ease, box-shadow 0.5s ease;
             position: relative;
             overflow: hidden;
-        }
-
-        .watch-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .watch-item:hover::before {
-            left: 100%;
         }
 
         .watch-item:hover {
@@ -132,28 +202,24 @@
         }
 
         .watch-item h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--text-light);
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
             font-size: 2.5em;
             margin-top: 20px;
             animation: float 3s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
         .watch-item p {
+            font-family: 'Playfair Display', serif;
             color: rgba(255, 255, 255, 0.8);
             margin: 10px 0;
             font-size: 16px;
         }
 
         .watch-item .price {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cinzel', serif;
             font-size: 1.8em;
-            color: var(--text-light);
+            color: var(--primary-color);
             margin: 10px 0;
         }
 
@@ -174,97 +240,204 @@
             transform: translateY(-3px);
         }
 
-        .animated-text {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5em;
-            color: var(--primary-color);
-            white-space: nowrap;
-            overflow: hidden;
-            position: relative;
-            animation: slide 10s linear infinite;
-            padding: 20px 0;
+        /* Particle Background */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
 
-        @keyframes slide {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+        /* Keyframes for Animations */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
 
-        /* 3D Parallax Effect */
-        .parallax {
-            position: relative;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-
-        .parallax img {
-            transform: translateZ(-100px) scale(2);
-            transition: transform 0.5s ease;
-        }
-
-        .parallax:hover img {
-            transform: translateZ(0) scale(1);
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3); }
+            100% { text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 80px rgba(255, 255, 255, 0.5); }
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .dynamic-text {
+                font-size: 4rem;
+            }
+
+            .dynamic-text.scrolled {
+                font-size: 1.5rem;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+
             .header .menu {
+                margin-top: 10px;
+                display: flex;
                 gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header .menu a {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .splash {
+                height: 50vh;
+                margin-top: -20px;
+                margin-bottom: -40px;
             }
 
             .watch-item {
-                padding: 15px;
+                margin: 20px 0;
+                padding: 10px;
             }
 
             .watch-item h3 {
-                font-size: 1.8em;
+                font-size: 1.5em;
             }
 
-            .animated-text {
+            .watch-item .price {
                 font-size: 1.2em;
             }
         }
+
+        @media (max-width: 480px) {
+            .dynamic-text {
+                font-size: 3rem;
+            }
+
+            .dynamic-text.scrolled {
+                font-size: 1.2rem;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .header .menu {
+                gap: 8px;
+            }
+
+            .header .menu a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .splash {
+                height: 40vh;
+            }
+
+            .watch-item h3 {
+                font-size: 1.2em;
+            }
+
+            .watch-item .price {
+                font-size: 1em;
+            }
+        }
     </style>
+    <!-- Redirect Script -->
+    <script type="text/javascript">
+        if (window.location.hostname === "arysance.com") {
+            window.location.href = "https://www.arysance.com" + window.location.pathname;
+        }
+    </script>
 </head>
 <body>
+
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+
+<!-- Full-page Video Background -->
+<div class="video-background">
+    <video autoplay loop muted playsinline>
+        <source src="snow (2).mp4" type="video/mp4" media="(min-width: 769px)">
+        <source src="snow.mp4" type="video/mp4" media="(max-width: 768px)">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
 <!-- Particle Background -->
 <div id="particles-js"></div>
 
 <header class="header">
-    <a href="index.html" class="logo">
-        <img src="Main arysance.jpg" alt="Arysance">
-    </a>
-    
     <nav class="menu">
-        <a href="index.html#featured-properties">Featured Properties</a>
-        <a href="watch.html">The Watch</a>
-        <a href="vs.html#contact-us">Enquiries</a>
+        <a href="index.html">Home</a>
+    </nav>
+    <div id="arysanceHeader" class="dynamic-text">ARYSANCE</div>
+    <nav class="menu">
+        <a href="our-story.html">Our Story</a>
+        <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-<section class="watch-section">
-    <div class="watch-item parallax">
-        <img src="silver 2.jpg" alt="Watch 1" id="watch1">
+<!-- Splash Section with vn.mp4 -->
+<section class="splash">
+    <video autoplay loop muted playsinline>
+        <source src="vn.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
+
+<!-- Watch Section -->
+<section class="watch-section" id="watch-section">
+    <div class="watch-item" id="gratitude-watch">
+        <img src="silver 2.jpg" alt="Sleek Silver Watch for Men and Women" loading="lazy">
         <h3>GRATITUDE WATCH</h3>
-        <p>This classic watch features a timeless design with a polished steel case and sleek chain strap. Perfect for any occasion, it combines elegance with functionality.</p>
+        <p>This classic watch features a timeless design with a polished steel case and sleek chain strap. Perfect for any occasion, it combines elegance with functionality. Whether you're dressing up for a formal event or keeping it casual, the Gratitude Watch adds a touch of sophistication to your look.</p>
         <div class="price">₹1821</div>
-        <p class="classic-font">MRP (Inclusive of all taxes) Shipping calculated at checkout.</p>
         <a href="buy.html" class="button">Buy Now</a>
-        
-        <!-- Animated Text -->
-        <div class="animated-text">ARYSANCE</div>
     </div>
     
-    <div class="watch-item parallax">
-        <img src="green download 9.jpg" alt="Watch 2" id="watch2">
+    <div class="watch-item" id="golden-spruce">
+        <img src="green best 2 - Copy.jpg" alt="Golden Luxury Watch for Women" loading="lazy">
         <h3>GOLDEN SPRUCE</h3>
-        <p>Embrace modern luxury with this sleek watch featuring a golden ring and a high-tech quartz movement. Its contemporary design is both stylish and practical.</p>
+        <p>Embrace modern luxury with this sleek watch featuring a golden ring and a high-tech quartz movement. Its contemporary design is both stylish and practical, making it the perfect accessory for those who value elegance and functionality. The Golden Spruce watch is designed to stand out, whether you're at work or out for a night on the town.</p>
         <div class="price">₹1704</div>
-        <p class="classic-font">MRP (Inclusive of all taxes) Shipping calculated at checkout.</p>
         <a href="buy.html" class="button">Buy Now</a>
     </div>
 </section>
+
+<!-- Script for Smooth Scrolling and Dynamic Text -->
+<script>
+    // Dynamic ARYSANCE Text Animation
+    const dynamicText = document.getElementById('arysanceHeader');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            dynamicText.classList.add('scrolled');
+        } else {
+            dynamicText.classList.remove('scrolled');
+        }
+    });
+
+    // Custom Cursor
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.pageX + 'px';
+        cursor.style.top = e.pageY + 'px';
+    });
+
+    document.querySelectorAll('a, button, img').forEach((element) => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+        });
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+        });
+    });
+</script>
 
 <!-- Particle.js Script -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -272,30 +445,23 @@
     particlesJS.load('particles-js', 'particles.json', function() {
         console.log('Particles.js loaded!');
     });
+</script>
 
-    function setupImageClick(imageId, images) {
-        const img = document.getElementById(imageId);
-        let currentIndex = 0;
-
-        img.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            img.src = images[currentIndex];
-        });
-    }
-
-    setupImageClick('watch1', [
-        'silver 2.jpg',     // Original image
-        'IMG_1491 (1).jpg', // Click 1
-        'silver3.jpg',      // Click 2
-        'lock.jpg'          // Click 3 (New image)
-    ]);
-
-    setupImageClick('watch2', [
-        'green download 9.jpg', // Original image
-        'green download 8.jpg', // Click 1
-        'green last.jpg',       // Click 2
-        'lock.jpg'              // Click 3 (New image)
-    ]);
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Arysance",
+  "url": "https://www.arysance.com",
+  "logo": "https://www.arysance.com/images/logo.png",
+  "description": "Discover the top watch trends of 2025 at Arysance. Shop stylish, affordable watches for men and women.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-123-456-7890",
+    "contactType": "customer service"
+  }
+}
 </script>
 
 </body>
