@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | Gratitude Watch | Arysance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Playfair+Display:400,700&display=swap">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #000000;
+            --background-dark: #1A1A1A;
+            --text-light: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 2em;
+            color: var(--primary-color);
+            font-family: 'Cinzel', serif;
+            margin: 20px 0;
+        }
+
+        .payment-instructions {
+            text-align: left;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .upi-id {
+            font-size: 1.5em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: monospace;
+            word-break: break-all;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 6px;
+            font-family: 'Cinzel', serif;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .step.completed .step-number {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+        }
+
+        .step.active .step-number {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border: 2px solid var(--text-light);
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 60%;
+            right: -40%;
+            height: 2px;
+            background-color: var(--primary-color);
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .upi-id {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="steps">
+            <div class="step completed">
+                <div class="step-number">1</div>
+                <div>Order Details</div>
+            </div>
+            <div class="step active">
+                <div class="step-number">2</div>
+                <div>Payment</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>Confirmation</div>
+            </div>
+        </div>
+
+        <h1>GRATITUDE WATCH</h1>
+        <div class="price">₹1821</div>
+        
+        <div class="payment-instructions">
+            <h3>Payment Instructions:</h3>
+            <ol>
+                <li>Open your UPI payment app (Google Pay, PhonePe, Paytm, etc.)</li>
+                <li>Send ₹1821 to the following UPI ID:</li>
+            </ol>
+            
+            <div class="upi-id">7827735779@ptyes</div>
+            
+            <p>After payment:</p>
+            <ol start="3">
+                <li>Click the "I've Paid" button below</li>
+                <li>Upload your payment screenshot (optional but recommended)</li>
+            </ol>
+        </div>
+        
+        <form id="paymentForm" action="https://formsubmit.co/arysance@gmail.com" method="POST">
+            <input type="hidden" name="watch_model" value="Gratitude Watch">
+            <input type="hidden" name="price" value="₹1821">
+            <input type="hidden" name="payment_status" value="Paid">
+            
+            <div class="form-group" style="margin: 20px 0;">
+                <label for="screenshot">Upload Payment Screenshot (Optional)</label>
+                <input type="file" id="screenshot" name="screenshot" accept="image/*">
+            </div>
+            
+            <input type="hidden" name="_next" value="https://yourwebsite.com/confirmation.html">
+            <input type="hidden" name="_subject" value="Payment Confirmation for Gratitude Watch">
+            <input type="hidden" name="_template" value="table">
+            
+            <button type="submit" class="button">I've Paid</button>
+            <a href="order-gratitude.html" class="button">Go Back</a>
+        </form>
+    </div>
+</body>
+</html>

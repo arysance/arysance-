@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude Quartz Watch | Arysance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --gold: #c6a972;
+            --light-gold: #e4d6b8;
+            --text: #333333;
+            --bg: #f8f8f8;
+            --white: #ffffff;
+            --paytm-blue: #002e6e;
+            --paytm-light-blue: #00baf2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.03;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .floating-text {
+            position: absolute;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 28vw;
+            color: var(--primary);
+            animation: float 25s infinite linear;
+            white-space: nowrap;
+            user-select: none;
+        }
+        
+        .floating-text:nth-child(1) {
+            top: 10%;
+            left: -50%;
+            animation-duration: 30s;
+        }
+        
+        .floating-text:nth-child(2) {
+            top: 40%;
+            left: -70%;
+            animation-duration: 35s;
+            animation-delay: -10s;
+        }
+        
+        .floating-text:nth-child(3) {
+            top: 70%;
+            left: -60%;
+            animation-duration: 40s;
+            animation-delay: -5s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateX(0) rotate(-15deg);
+            }
+            100% {
+                transform: translateX(100vw) rotate(-15deg);
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--light-gold);
+        }
+        
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-style: italic;
+            color: var(--gold);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+        
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        @media (max-width: 900px) {
+            .product-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .product-image {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .current-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .original-price {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 1rem;
+        }
+        
+        .discount {
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+        
+        .product-description {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .features {
+            margin-bottom: 2rem;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-icon {
+            color: var(--gold);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .order-section {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .address-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        @media (max-width: 600px) {
+            .address-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .pincode-container {
+            position: relative;
+        }
+        
+        .indian-flag {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+        
+        .payment-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .payment-options {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .payment-option {
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background-color: rgba(198, 169, 114, 0.05);
+        }
+        
+        .payment-option.selected {
+            border-color: var(--paytm-blue);
+            background-color: rgba(0, 46, 110, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .payment-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(198, 169, 114, 0.15);
+        }
+        
+        .payment-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        .payment-option.selected .payment-icon {
+            color: var(--paytm-blue);
+        }
+        
+        .paytm-icon {
+            color: var(--paytm-blue);
+        }
+        
+        .payment-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .payment-instruction {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .upi-id {
+            background-color: #f8f6f0;
+            padding: 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            color: var(--primary);
+        }
+        
+        .screenshot-confirmation {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #f8f6f0;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+        
+        .confirmation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 480px) {
+            .confirmation-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        .btn {
+            display: block;
+            padding: 1.2rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: var(--gold);
+        }
+        
+        .btn-full {
+            width: 100%;
+        }
+        
+        .btn-secondary {
+            background-color: #f0f0f0;
+            color: var(--text);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #ddd;
+        }
+        
+        .btn-success {
+            background-color: #25D366;
+        }
+        
+        .btn-success:hover {
+            background-color: #1da851;
+        }
+        
+        .btn-paytm {
+            background-color: var(--paytm-blue);
+            color: white;
+        }
+        
+        .btn-paytm:hover {
+            background-color: var(--paytm-light-blue);
+        }
+        
+        .whatsapp-option {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background-color: #f8f6f0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .whatsapp-text {
+            margin-bottom: 1rem;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 0.5rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        
+        .status-message {
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            text-align: center;
+            display: none;
+        }
+        
+        .success {
+            background-color: #e6f7ee;
+            color: #0a7b4a;
+            border: 1px solid #0a7b4a;
+        }
+        
+        .error {
+            background-color: #fee;
+            color: #d00;
+            border: 1px solid #d00;
+        }
+        
+        .payment-flow {
+            display: none;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f0f8ff;
+            border-radius: 8px;
+            border-left: 4px solid var(--paytm-blue);
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-number {
+            background-color: var(--paytm-blue);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="floating-text">ARYSANCE</div>
+        <div class="floating-text">ARYSANCE</div>
+        <div class="floating-text">ARYSANCE</div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="brand">ARYSANCE</div>
+            <div class="tagline">Timeless Elegance, Modern Precision</div>
+        </header>
+        
+        <main>
+            <div class="product-showcase">
+                <div class="product-image">
+                    <img src="silver 2.jpg" alt="Gratitude Quartz Watch in Silver">
+                </div>
+                
+                <div class="product-details">
+                    <h1 class="product-title">Gratitude Quartz Watch</h1>
+                    
+                    <div class="product-price">
+                        <span class="current-price">₹1,274</span>
+                        <span class="original-price">₹1,821</span>
+                        <span class="discount">30% OFF</span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <p>The Gratitude Quartz Watch by Arysance embodies precision engineering and sophisticated design. Featuring a Swiss quartz movement for exceptional accuracy, this timepiece is crafted with meticulous attention to detail.</p>
+                        <p>Its minimalist dial, protected by scratch-resistant sapphire crystal glass, is complemented by a premium stainless steel case and a luxurious sleek chain strap for enduring comfort and style.</p>
+                    </div>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Premium Materials: Crafted from polished stainless steel</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Timeless Design: Sleek silver dial with minimalist markers, complemented by a luxurious sleek chain strap for all-day comfort</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Luxury Packaging: Delivered in a premium Arysance gift box, perfect for gifting or cherishing yourself</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Two-Year Warranty: Backed by our commitment to quality, ensuring peace of mind with every tick</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-section">
+                <h2 class="section-title">Secure Your Timepiece</h2>
+                
+                <form id="order-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Shipping Address</label>
+                        <textarea id="address" name="address" rows="3" required placeholder="Enter your complete shipping address"></textarea>
+                    </div>
+                    
+                    <div class="address-grid">
+                        <div class="form-group">
+                            <label for="district">District</label>
+                            <input type="text" id="district" name="district" required placeholder="Enter your district">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required placeholder="Enter your city">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" required placeholder="Enter your state">
+                        </div>
+                        
+                        <div class="form-group pincode-container">
+                            <label for="pincode">Pincode</label>
+                            <input type="text" id="pincode" name="pincode" required placeholder="Enter your pincode" pattern="[0-9]{6}" maxlength="6">
+                            <span class="indian-flag">🇮🇳</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="section-title" style="font-size: 1.5rem;">Select Payment Method</h3>
+                    
+                    <div class="payment-options">
+                        <div class="payment-option" id="upi-option" onclick="selectPayment('upi')">
+                            <div class="payment-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="payment-name">UPI Payment</div>
+                            <div class="payment-instruction">Pay via any UPI app</div>
+                        </div>
+                        
+                        <div class="payment-option" id="paytm-option" onclick="selectPayment('paytm')">
+                            <div class="payment-icon paytm-icon">
+                                <i class="fab fa-paypal"></i>
+                            </div>
+                            <div class="payment-name">PayTM</div>
+                            <div class="payment-instruction">Pay via PayTM app</div>
+                        </div>
+                    </div>
+                    
+                    <div id="payment-details">
+                        <!-- Payment details will be shown here based on selection -->
+                    </div>
+                    
+                    <div id="payment-flow" class="payment-flow">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <p>Complete your payment using the selected method</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <p>Return to this page after payment</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <p>Send the payment screenshot to WhatsApp number <strong>7827735779</strong></p>
+                                <a href="https://wa.me/917827735779" class="whatsapp-btn" target="_blank" style="margin-top: 0.5rem;">
+                                    <i class="fab fa-whatsapp"></i> Send Screenshot
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <p>Confirm that you've sent the screenshot</p>
+                                <button type="button" class="btn btn-success" onclick="confirmScreenshotSent()" style="margin-top: 0.5rem;">
+                                    <i class="fas fa-check-circle"></i> I've Sent the Screenshot
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="screenshot-confirmation" class="screenshot-confirmation">
+                        <h3>Thank you for confirming!</h3>
+                        <p>After verifying your payment, we will process your order. You will receive a confirmation email shortly.</p>
+                    </div>
+                    
+                    <div id="status-message" class="status-message"></div>
+                    
+                    <button type="button" id="complete-purchase-btn" class="btn btn-full" onclick="validateForm()" style="display: none;">Complete Purchase</button>
+                </form>
+                
+                <div class="whatsapp-option">
+                    <p class="whatsapp-text">Prefer to order via WhatsApp?</p>
+                    <a href="https://wa.me/917827735779?text=Hi,%20I'm%20interested%20in%20the%20Gratitude%20Quartz%20Watch" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Message Us on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2025 Arysance. Crafting Timeless Precision.</p>
+        </footer>
+    </div>
+
+    <script>
+        let selectedPaymentMethod = '';
+        
+        function selectPayment(method) {
+            selectedPaymentMethod = method;
+            
+            // Update UI to show selected payment method
+            document.getElementById('upi-option').classList.remove('selected');
+            document.getElementById('paytm-option').classList.remove('selected');
+            document.getElementById(`${method}-option`).classList.add('selected');
+            
+            // Show payment details based on selection
+            const paymentDetails = document.getElementById('payment-details');
+            
+            if (method === 'upi') {
+                paymentDetails.innerHTML = `
+                    <div class="upi-id">7827735779@ptyes</div>
+                    <p class="payment-instruction">Please include your name in the payment note</p>
+                    <button type="button" class="btn btn-full" onclick="initiatePayment()">Proceed with UPI Payment</button>
+                `;
+            } else if (method === 'paytm') {
+                paymentDetails.innerHTML = `
+                    <div class="upi-id">Pay ₹1,274 to 7827735779@ptyes</div>
+                    <p class="payment-instruction">Click the button below to open PayTM</p>
+                    <button type="button" class="btn btn-paytm btn-full" onclick="initiatePaytmPayment()">
+                        <i class="fab fa-paypal"></i> Pay with PayTM
+                    </button>
+                `;
+            }
+            
+            // Hide the payment flow until payment is initiated
+            document.getElementById('payment-flow').style.display = 'none';
+            document.getElementById('complete-purchase-btn').style.display = 'none';
+            document.getElementById('screenshot-confirmation').style.display = 'none';
+        }
+        
+        function initiatePayment() {
+            // Show the payment flow instructions
+            document.getElementById('payment-flow').style.display = 'block';
+            
+            // Scroll to payment flow
+            document.getElementById('payment-flow').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function initiatePaytmPayment() {
+            // Simulate opening PayTM app (in a real scenario, this would be a proper deep link)
+            showStatus('Opening PayTM app...', 'success');
+            
+            // In a real implementation, this would be: window.location.href = 'paytmmp://pay?pa=7827735779@ptyes&pn=Arysance&am=1274';
+            // For demo purposes, we'll just show a message
+            setTimeout(() => {
+                showStatus('Please complete the payment in the PayTM app and return to this page', 'success');
+                
+                // Show the payment flow instructions
+                document.getElementById('payment-flow').style.display = 'block';
+                
+                // Scroll to payment flow
+                document.getElementById('payment-flow').scrollIntoView({ behavior: 'smooth' });
+            }, 1500);
+        }
+        
+        function validateForm() {
+            const form = document.getElementById('order-form');
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#d00';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#ddd';
+                }
+            });
+            
+            // Validate pincode format
+            const pincode = document.getElementById('pincode');
+            const pincodePattern = /^[0-9]{6}$/;
+            if (!pincodePattern.test(pincode.value.trim())) {
+                pincode.style.borderColor = '#d00';
+                isValid = false;
+                showStatus('Please enter a valid 6-digit pincode', 'error');
+                return;
+            }
+            
+            if (!selectedPaymentMethod) {
+                showStatus('Please select a payment method', 'error');
+                return;
+            }
+            
+            if (!isValid) {
+                showStatus('Please fill all required fields', 'error');
+                return;
+            }
+            
+            // If form is valid, proceed to payment
+            if (selectedPaymentMethod === 'upi') {
+                initiatePayment();
+            } else if (selectedPaymentMethod === 'paytm') {
+                initiatePaytmPayment();
+            }
+        }
+        
+        function confirmScreenshotSent() {
+            document.getElementById('payment-flow').style.display = 'none';
+            document.getElementById('screenshot-confirmation').style.display = 'block';
+            document.getElementById('complete-purchase-btn').style.display = 'block';
+            
+            // Scroll to confirmation
+            document.getElementById('screenshot-confirmation').scrollIntoView({ behavior: 'smooth' });
+            
+            showStatus('Thank you! We will verify your payment and process your order.', 'success');
+        }
+        
+        function showStatus(message, type) {
+            const statusEl = document.getElementById('status-message');
+            statusEl.textContent = message;
+            statusEl.className = `status-message ${type}`;
+            statusEl.style.display = 'block';
+            
+            // Scroll to status message
+            statusEl.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Validate pincode on input
+        document.getElementById('pincode').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+            if (this.value.length > 6) {
+                this.value = this.value.slice(0, 6);
+            }
+        });
+    </script>
+</body>
+</html>

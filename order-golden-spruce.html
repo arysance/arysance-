@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Golden Spruce Watch | Arysance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Playfair+Display:400,700&display=swap">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #000000;
+            --background-dark: #1A1A1A;
+            --text-light: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .watch-display {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .watch-image {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            font-family: 'Cinzel', serif;
+            margin: 15px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            color: var(--text-light);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 6px;
+            font-family: 'Cinzel', serif;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .step.active .step-number {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 60%;
+            right: -40%;
+            height: 2px;
+            background-color: var(--primary-color);
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .watch-image {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="steps">
+            <div class="step active">
+                <div class="step-number">1</div>
+                <div>Order Details</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>Payment</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>Confirmation</div>
+            </div>
+        </div>
+
+        <h1>GOLDEN SPRUCE WATCH</h1>
+        
+        <div class="watch-display">
+            <img src="green best 2 - Copy.jpg" alt="Golden Spruce Watch" class="watch-image">
+            <div class="price">₹1704</div>
+        </div>
+
+        <!-- PASTE THIS IN BOTH ORDER FILES -->
+<form action="https://formsubmit.co/arysance@gmail.com" method="POST">
+    <!-- Keep all your existing input fields (name, email, etc.) -->
+    <input type="hidden" name="_next" 
+           value="https://www.arysance.com/payment-gratitude.html"> 
+    <!-- For Golden Spruce: payment-golden-spruce.html -->
+    <input type="hidden" name="_subject" 
+           value="New Order: Gratitude Watch">
+    <!-- For Golden Spruce: "New Order: Golden Spruce Watch" -->
+    <input type="hidden" name="_template" value="table">
+    
+    <!-- Your existing form fields stay here -->
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <!-- ... other fields ... -->
+    
+    <button type="submit" class="button">Proceed to Payment</button>
+  </form>
+        
+        <a href="index.html" class="back-link">← Back to Collection</a>
+    </div>
+</body>
+</html>

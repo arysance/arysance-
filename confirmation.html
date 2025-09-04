@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Order Confirmed | Arysance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Playfair+Display:400,700&display=swap">
+    <style>
+        /* Maintain your existing styles */
+        body {
+            margin: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .confirmation-box {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px auto;
+        }
+        
+        .confirmation-icon {
+            font-size: 60px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #556B8E;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background-color: #3a4a61;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="confirmation-box">
+        <div class="confirmation-icon">✓</div>
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for your purchase. Your order <strong id="confirmed-order-id"></strong> has been received.</p>
+        <p>We've sent a confirmation email with your order details.</p>
+        <p>Our team will process your order and contact you if needed.</p>
+        <a href="index.html" class="btn">Return to Home</a>
+    </div>
+</div>
+
+<script>
+    // Display order ID
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderId = urlParams.get('orderId');
+    document.getElementById('confirmed-order-id').textContent = orderId;
+</script>
+
+</body>
+</html>
